@@ -8,7 +8,7 @@ const Header: FC = () => {
       <nav>
         <ul className={styles.menu}>
           <li>
-            <Link href={'/123'}>123</Link>
+            <Link href={'#123'}>123</Link>
           </li>
           <li>
             <Link href={'#456'}>456</Link>

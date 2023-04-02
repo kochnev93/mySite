@@ -1,15 +1,14 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-#__next{
+#__next {
   height: 100vh;
 }
 
-
-body{
+body {
   /*background: linear-gradient(149deg, rgba(24,187,156,1) 0%, rgba(106,57,175,1) 42%, rgba(187,24,148,1) 72%, rgba(115,53,134,1) 100%);*/
   background-color: #202124;
   /* animation: gradient 10s infinite linear; */
@@ -19,13 +18,13 @@ body{
 
 @keyframes gradient {
   0% {
-      background-position: 80% 0%;
+    background-position: 80% 0%;
   }
   50% {
-      background-position: 20% 100%;
+    background-position: 20% 100%;
   }
   100% {
-      background-position: 80% 0%;
+    background-position: 80% 0%;
   }
 }
 
@@ -37,7 +36,6 @@ body{
   width: 100%;
   height: 84vh;
   max-width: 1268px;
-  
 
   max-height: 674px;
   transition: all 0.4s ease 0s;
@@ -49,12 +47,13 @@ body{
 
   display: flex;
   align-items: flex-start;
-
 }
 
-.main{
-  flex: 10;
+.main {
+  flex: auto;
   display: flex;
+  height: 100%;
+  width: 100%;
 }
 
 .layoat {
@@ -65,4 +64,48 @@ body{
   justify-content: center;
   align-items: center;
 }
+
+.page {
+  padding: 10px;
+  position: absolute;
+  overflow: hidden;
+  left: 0px;
+  right: 0;
+  bottom: 0px;
+
+  background: #fff;
+  transform-origin: center left;
+  opacity: 0;
+
+
+  transition: visibility 1s linear, opacity 1s linear, top 1s linear;
+
+
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: aqua;
+  overflow-y: scroll;
+
+  opacity: 0;
+  visibility: hidden;
+  z-index: 9;
+}
+
+.page:not(.active){
+  top: 200px;
+}
+
+.page:not(.in){
+  top: -200px;
+}
+
+
+.page.active {
+  visibility: visible;
+  top: 0px;
+  opacity: 1;
+  z-index: 10;
+}
+
 
