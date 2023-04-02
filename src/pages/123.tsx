@@ -5,7 +5,7 @@ import Contaier from '@/components/screens/Container/Container';
 import Header from '@/components/Header/Header';
 
 
-export default function HomePage() {
+export default function About() {
   return (
     <>
       <Head>
@@ -20,6 +20,8 @@ export default function HomePage() {
         <main className='main'>
           
           <Home />
+
+          <div>123132123</div>
 
         </main>
       </Contaier>

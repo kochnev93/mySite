@@ -5,6 +5,10 @@
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
+
+  -moz-box-shadow: 3px 3px 4px #bd2525; 
+  -webkit-box-shadow: 3px 3px 4px #b42c2c; 
+  box-shadow: 3px 3px 4px #cc0b0b; 
 }
 
 .description {
