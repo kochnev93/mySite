@@ -8,13 +8,13 @@ const Header: FC = () => {
       <nav>
         <ul className={styles.menu}>
           <li>
-            <Link href={'#123'}>123</Link>
+            <Link href={'#123'}>Главная</Link>
           </li>
           <li>
-            <Link href={'#456'}>456</Link>
+            <Link href={'#456'}>Обо мне</Link>
           </li>
           <li>
-            <Link href={'#789'}>789</Link>
+            <Link href={'#789'}>Резюме</Link>
           </li>
         </ul>
       </nav>

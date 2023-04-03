@@ -2,10 +2,32 @@
 flex: 1;
 position: absolute;
 top: 0;
+right: 100%;
+margin-right: 10px;
+width: 50px;
 }
 
 .menu{
     display: flex;
     flex-direction: column;
-    background-color: black;
+    background-color: grey;
+    list-style: none;
+
+    li{
+        padding: 5px;
+    }
+
+    li:hover{
+        a{
+            color: rgba(164,255,145,1);;
+        }
+    }
+
+    li:not(:last-child){
+        border-bottom: 1px solid white;
+    }
+
+    a{
+        text-decoration: none;
+    }
 }
