@@ -5,7 +5,9 @@ import Contaier from '@/components/screens/Container/Container';
 import Header from '@/components/Header/Header';
 import About from '@/components/screens/About/About';
 import Resume from '@/components/screens/Resume/Resume';
+
 import { useRouter } from 'next/router';
+import Background from '@/components/Background/Background';
 
 
 
@@ -20,6 +22,7 @@ export default function HomePage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      
 
       <Cursor />
 
@@ -33,6 +36,8 @@ export default function HomePage() {
           </div>
         </main>
       </Contaier>
+
+      <Background/>
     </>
   );
 }

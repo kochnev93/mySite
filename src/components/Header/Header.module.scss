@@ -4,7 +4,8 @@ position: absolute;
 top: 0;
 right: 100%;
 margin-right: 10px;
-width: 50px;
+width: 100px;
+z-index: 100;
 }
 
 .menu{
@@ -25,9 +26,40 @@ width: 50px;
 
     li:not(:last-child){
         border-bottom: 1px solid white;
+        border-right: none;
     }
 
     a{
         text-decoration: none;
     }
+}
+
+@media (max-width: 1200px) {
+    .header{
+        position: relative;
+        top: 40%;
+        left: 0;
+        margin-right: 10px;
+        width: auto;
+        z-index: 100;
+        margin-bottom: 20px;
+        }
+
+        .menu{
+            display: flex;
+            flex-direction: row;
+            background-color: grey;
+            list-style: none;
+        
+            li{
+                padding: 5px 10px;
+            }
+
+        
+            li:not(:last-child){
+                border-bottom: none;
+                border-right: 1px solid white;
+            }
+        
+        }
 }
