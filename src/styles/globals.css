@@ -14,10 +14,16 @@
   overflow: hidden;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #0a0a0a;
   background-size: 400%;
   font-family: sans-serif;
+  color: rgba(255, 255, 255, 0.85);
+  min-width: 320px;
 }
 
 .container {
@@ -47,6 +53,9 @@ body {
   display: flex;
   height: 100%;
   width: 100%;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
 }
 
 .layoat {
@@ -60,7 +69,7 @@ body {
 }
 
 .page {
-  padding: 10px;
+  padding: 10px 40px;
   position: absolute;
   overflow: hidden;
   top: 0;
@@ -68,7 +77,7 @@ body {
   right: 0;
   bottom: 0px;
 
-  background-color: #9e9e9e;
+  background-color: #222;
   transform-origin: center left;
   opacity: 0;
 
@@ -87,7 +96,30 @@ body {
   z-index: 9;
 
   animation: pageAnimateOut 1s ease;
+
+
+  
 }
+
+.page::-webkit-scrollbar {
+  width: 5px;
+  background-color: rgba(252, 206, 0, 0.2);
+}
+
+.page::-webkit-scrollbar-thumb {
+  background-color: #ffc810;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+}
+
+.page::-webkit-scrollbar-track {
+  border-radius: 5px;
+    background-color: transparent;
+}
+
+
+
+
 
 .page.active {
   visibility: visible;
@@ -130,12 +162,14 @@ body {
   .main {
     flex-direction: column;
     height: auto;
+    padding-left: 80px;
+    padding-right: 15px;
   }
 
   .container {
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto;
-    margin-top: 200px;
+    margin-top: 20px;
     height: auto;
     max-height: 100%;
     flex-direction: column;
@@ -145,7 +179,6 @@ body {
     position: relative;
     opacity: 1;
     transform: translate(0, 0);
-    background-color: #9e9e9e;
     visibility: visible;
     border-radius: 5px;
 
@@ -168,5 +201,22 @@ body {
     opacity: 1;
     z-index: 10;
     animation: none;
+  }
+}
+
+
+@media (max-width: 650px) {
+  .container {
+    margin-top: 0px;
+  }
+
+  .main {
+    padding-top: 50px;
+  }
+
+  .main {
+    padding-top: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }

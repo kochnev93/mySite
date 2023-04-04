@@ -13,7 +13,7 @@ import Background from '@/components/Background/Background';
 
 export default function HomePage() {
   const {asPath} = useRouter()
-  console.log(asPath)
+
   return (
     <>
       <Head>

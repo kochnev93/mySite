@@ -27,13 +27,17 @@ const Cursor: FC = () => {
         mouseY = e.clientY;
       });
 
-      document.querySelector('a').addEventListener('mouseover', () => {
-        cursorRef.current?.classList.add(`${styles.zoom}`);
-      });
+      let links = document.querySelectorAll('a');
 
-      document.querySelector('a').addEventListener('mouseout', () => {
-        cursorRef.current?.classList.remove(`${styles.zoom}`);
-      });
+      links.forEach((elem)=>{
+        elem.addEventListener('mouseover',()=>{
+          cursorRef.current?.classList.add(`${styles.zoom}`);
+        })
+
+        elem.addEventListener('mouseout',()=>{
+          cursorRef.current?.classList.remove(`${styles.zoom}`);
+        })
+      })
 
       var intervalCursor = setInterval(move, 1000 / 60);
 

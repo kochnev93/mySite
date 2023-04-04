@@ -1,5 +1,7 @@
 import { FC } from 'react'
 import styles from './Home.module.scss'
+import PrintedText from '@/components/PrintedText/PrintedText'
+
 
 
 const Home: FC = () => {
@@ -13,13 +15,14 @@ const Home: FC = () => {
       <div className={styles.bio}>
         <div className={styles.img}>
           <div className={styles.img__wrapper}>
-            <img src="https://cs14.pikabu.ru/post_img/2023/02/13/8/1676295806139337963.jpg" alt="" />
+            <img src="./photo2.jpg" alt="" />
           </div>
         </div>
         <div className={styles.bio__title}>
         <h1>Кочнев Антон</h1>
         </div>
         <div className={styles.bio__subtitle}>Разработчик</div>
+        <PrintedText/>
         <div className={styles.social}>social</div>
       </div>
 
