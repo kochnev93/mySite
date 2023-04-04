@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -5,12 +7,15 @@
 }
 
 #__next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   overflow: hidden;
 }
 
 body {
-  background-color: #202124;
+  background-color: #0a0a0a;
   background-size: 400%;
   font-family: sans-serif;
 }

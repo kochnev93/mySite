@@ -5,7 +5,7 @@
     width: 30px;
     height: 30px;
     opacity: 1;
-    background: rgba(120,204,109,.25);
+    background: rgba(255, 208, 0, .25);
     border: 1px solid transparent;
     -o-transition: width .3s cubic-bezier(.3,0,.3,1),height .3s cubic-bezier(.3,0,.3,1),background .3s cubic-bezier(.3,0,.3,1),margin .3s cubic-bezier(.3,0,.3,1),border-color .7s cubic-bezier(.3,0,.3,1);
     transition: width .3s cubic-bezier(.3,0,.3,1),height .3s cubic-bezier(.3,0,.3,1),background .3s cubic-bezier(.3,0,.3,1),margin .3s cubic-bezier(.3,0,.3,1),border-color .7s cubic-bezier(.3,0,.3,1);
@@ -23,12 +23,12 @@
         width: 80px;
         height: 80px;
         background: rgba(120,204,109,0);
-        border: 1px solid rgba(164,255,145,1);
+        border: 1px solid rgb(255, 208, 0);;
     }
 
   }
   
-  /* Скрываем декоративный элемент при ширине браузера меньше 992px */
+  
   @media (max-width: 991.98px) {
     .cursor {
       display: none;

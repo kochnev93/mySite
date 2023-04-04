@@ -6,7 +6,7 @@ const Home: FC = () => {
   return (
     <div className={styles.profile}>
       <div className={styles.slider}>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Moench_2339.jpg/1200px-Moench_2339.jpg" alt="" />
+        <img src="https://kartinki.cc/files/img/post/98/zheltye-abstraktnye-10.webp" alt="" />
       </div>
 
 

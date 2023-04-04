@@ -3,7 +3,7 @@ type Props = {
 };
 
 const About: React.FC<Props> = (props) => (
-  <div id={'456'} className={props.className}>
+  <div  className={props.className}>
     <h2>About</h2>
     <p>
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non, adipisci

@@ -4,28 +4,52 @@ position: absolute;
 top: 0;
 right: 100%;
 margin-right: 10px;
-width: 100px;
+width: auto;
 z-index: 100;
 }
 
 .menu{
     display: flex;
     flex-direction: column;
-    background-color: grey;
+    background-color: #222222;
     list-style: none;
+    border-radius: 5px;
 
     li{
-        padding: 5px;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+
+        a{
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            flex-direction: column;
+            padding: 10px;
+            color: white;
+        }
+
+        span{
+            font-family: 'Anonymous Pro', monospace;
+            font-size: 10px;
+        }
+
+        svg{
+            width: 30px;
+            margin-bottom: 3px;
+        }
     }
 
     li:hover{
         a{
-            color: rgba(164,255,145,1);;
+            color: rgb(255, 208, 0);
         }
     }
 
     li:not(:last-child){
-        border-bottom: 1px solid white;
+        border-bottom: 1px solid grey;
         border-right: none;
     }
 
