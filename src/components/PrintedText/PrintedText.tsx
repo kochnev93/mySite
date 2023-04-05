@@ -16,7 +16,7 @@ const PrintedText: React.FC<Props> = (props) => {
 
   useEffect(() => {
     console.log('USEEFFECT')
-    //typeLine();
+    typeLine();
   }, []);
 
   let line = 0;
@@ -25,7 +25,7 @@ const PrintedText: React.FC<Props> = (props) => {
 
   function typeLine() {
     if (count + 1 >= text[line].length){
-        return setTimeout(()=> {deleteLine()}, 5000)
+        return setTimeout(()=> {deleteLine()}, 2000)
         
     };
 
@@ -33,7 +33,7 @@ const PrintedText: React.FC<Props> = (props) => {
 
     let interval = setTimeout(() => {
       result += text[line][count];
-      setString(result + '|');
+      setString(result + ' |');
       count++;
 
       console.log('before count', count);
@@ -55,7 +55,7 @@ const PrintedText: React.FC<Props> = (props) => {
       
       typeLine();
       
-    }, getRandomInt(250 * 2.5));
+    }, 150);
 
     
   }
@@ -66,18 +66,19 @@ const PrintedText: React.FC<Props> = (props) => {
     if (count <= 0){
         count = 0;
 
-        if (line === text.length){
+        if (line === text.length - 1){
             line = 0
+            return setTimeout(()=> {typeLine()}, 1000)
         }
 
         line++
 
-        return setTimeout(()=> {typeLine()}, 3000)
+        return setTimeout(()=> {typeLine()}, 1000)
     }
 
     let interval = setTimeout(() => {
       result = result.slice(0, -1);
-      setString(result + '|');
+      setString(result + ' |');
 
       count--;
 
@@ -89,14 +90,14 @@ const PrintedText: React.FC<Props> = (props) => {
     //   }
 
       deleteLine();
-    }, getRandomInt(250 * 2.5));
+    }, 100);
   }
 
   function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
   }
 
-  return <div className={`printed_text ${props.className}`}>{string}</div>;
+  return <div className={`printed_text ${props.className}` } style={{color: 'yellow'}}>{string}</div>;
 };
 
 export default PrintedText;
