@@ -3,7 +3,7 @@ import styles from './Header.module.scss';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { RxHamburgerMenu } from 'react-icons/Rx';
-
+import PrintedText from '../PrintedText/PrintedText';
 //Icons
 import { FaUserAlt } from 'react-icons/Fa';
 
@@ -40,7 +40,7 @@ const Header: FC = () => {
           </div>
           <div>
             <h4>Кочнев Антон</h4>
-            <span>Frontend - разработчик</span>
+            <PrintedText/>
           </div>
         </div>
 

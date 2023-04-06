@@ -29,7 +29,7 @@ const PrintedText: React.FC<Props> = (props) => {
         
     };
 
-    if (line === text.length) return;
+    if (line === text.length - 1) return;
 
     let interval = setTimeout(() => {
       result += text[line][count];
