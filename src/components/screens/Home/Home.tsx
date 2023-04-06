@@ -1,6 +1,8 @@
 import { FC } from 'react'
 import styles from './Home.module.scss'
 import PrintedText from '@/components/PrintedText/PrintedText'
+import Image from 'next/image'
+
 
 
 
@@ -15,7 +17,8 @@ const Home: FC = () => {
       <div className={styles.bio}>
         <div className={styles.img}>
           <div className={styles.img__wrapper}>
-            <img src="./photo2.jpg" alt="" />
+            {/* <img src="./photo2.jpg" alt="" /> */}
+            <Image src="/photo2.jpg" alt="Кочнев Антон" width={500} height={500} quality={50}/>
           </div>
         </div>
         <div className={styles.bio__title}>

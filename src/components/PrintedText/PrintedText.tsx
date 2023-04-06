@@ -36,10 +36,10 @@ const PrintedText: React.FC<Props> = (props) => {
       setString(result + ' |');
       count++;
 
-      console.log('before count', count);
-      console.log('result', result);
-      console.log('after count', count);
-      console.warn(text[line].length, count >= text[line].length);
+      //console.log('before count', count);
+      //console.log('result', result);
+      //console.log('after count', count);
+      //console.warn(text[line].length, count >= text[line].length);
 
       //   if (line === text.length) {
       //     clearTimeout(interval);
@@ -61,7 +61,7 @@ const PrintedText: React.FC<Props> = (props) => {
   }
 
   function deleteLine() {
-    console.log('DELETE COUNT', count);
+    //console.log('DELETE COUNT', count);
 
     if (count <= 0){
         count = 0;

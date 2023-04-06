@@ -1,4 +1,5 @@
 import { FC, useEffect, useState } from 'react';
+import { GetStaticProps, GetStaticPaths  } from 'next';
 import styles from './Header.module.scss';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -8,28 +9,55 @@ import PrintedText from '../PrintedText/PrintedText';
 import { FaUserAlt } from 'react-icons/Fa';
 
 const Header: FC = () => {
+  //const { asPath } = useRouter();
+  //console.log(asPath);
+  //console.log(menu)
+
   const { asPath } = useRouter();
-  console.log(asPath);
+  console.log('asPath', asPath);
+
+  const router = useRouter();
+  // router.push('/#123')
+  // router.push('/#456')
+  console.log('router', router);
 
   const [visible, setVisible] = useState(true);
+  const [activeLink, setActiveLink] = useState('');
 
-  useEffect(() => {
-    let windowPageYOffset = window.pageYOffset;
-    console.log(windowPageYOffset);
+  // const menu = [
+  //   {
+  //     id: 1,
+  //     title: 'Главная',
+  //     href: '#123',
+  //     activeClass: asPath === '/#123' ? 'active' : '',
+  //   },
+  //   {
+  //     id: 2,
+  //     title: 'Обо мне',
+  //     href: '#456',
+  //     activeClass: asPath === '/#456' ? 'active' : '',
+  //   },
+  //   {
+  //     id: 3,
+  //     title: 'Резюме',
+  //     href: '#789',
+  //     activeClass: asPath === '/#789' ? 'active' : '',
+  //   },
+  // ];
 
-    //window.scrollBy(0, 100);
-  }, []);
+  // const xxx = props.xxx.map((item) => {
+  //   console.log(item, asPath)
+  //   return (
+  //     <li className={`${item.activeClass} ${asPath === item.href ? 'active' : ''}`}>
+  //       <Link href={item.href}>
+  //         <FaUserAlt />
+  //         <span>{item.title}</span>
+  //       </Link>
+  //     </li>
+  //   );
+  // });
 
-  const menu = [
-    {
-      id: 1,
-      title: 'Главная',
-      href: '#123',
-      activeClass: `${asPath === '/#123' ? styles.active : ''}`,
-    },
-  ];
-
-  const activeStyle = 'active';
+  //console.log(xxx);
 
   return (
     <header className={styles.header}>
@@ -40,7 +68,7 @@ const Header: FC = () => {
           </div>
           <div>
             <h4>Кочнев Антон</h4>
-            <PrintedText/>
+            <PrintedText />
           </div>
         </div>
 
@@ -50,15 +78,7 @@ const Header: FC = () => {
       </div>
       <nav>
         <ul className={styles.menu}>
-          {/* {menu.map((item) => {
-            <li>
-              <Link href={item.href}>
-                <FaUserAlt />
-                <span>{item.title}</span>
-              </Link>
-            </li>
-          })} */}
-          <li className={activeStyle}>
+          <li className={`${asPath === '/' ? styles.active : ''}`}>
             <Link href={'#123'}>
               <FaUserAlt />
               <span>Главная</span>
@@ -80,6 +100,13 @@ const Header: FC = () => {
       </nav>
     </header>
   );
+};
+
+export const getStaticProps = async (context) => {
+  console.log(context);
+  return {
+    props: {},
+  };
 };
 
 export default Header;

@@ -2,12 +2,26 @@ import Head from 'next/head';
 import Home from '@/components/screens/Home/Home';
 import Cursor from '@/components/Cursor/Cursor';
 import Contaier from '@/components/screens/Container/Container';
-import Header from '@/components/Header/Header';
-import About from '@/components/screens/About/About';
+//import Header from '@/components/Header/Header';
+//import About from '@/components/screens/About/About';
 import Resume from '@/components/screens/Resume/Resume';
 
 import { useRouter } from 'next/router';
 import Background from '@/components/Background/Background';
+import dynamic from 'next/dynamic'
+
+const Header = dynamic(
+  () => import('@/components/Header/Header'),
+  { ssr: false }
+)
+
+const About = dynamic(
+  () => import('@/components/screens/About/About'),
+  { ssr: false }
+
+)
+
+
 
 
 
