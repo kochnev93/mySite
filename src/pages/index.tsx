@@ -2,31 +2,55 @@ import Head from 'next/head';
 import Home from '@/components/screens/Home/Home';
 import Cursor from '@/components/Cursor/Cursor';
 import Contaier from '@/components/screens/Container/Container';
-//import Header from '@/components/Header/Header';
-//import About from '@/components/screens/About/About';
+import Header from '@/components/Header/Header';
+import About from '@/components/screens/About/About';
 import Resume from '@/components/screens/Resume/Resume';
+import Main from '@/components/screens/Main/Main';
 
 import { useRouter } from 'next/router';
 import Background from '@/components/Background/Background';
-import dynamic from 'next/dynamic'
+import dynamic from 'next/dynamic';
+import { useEffect, useState } from 'react';
 
-const Header = dynamic(
-  () => import('@/components/Header/Header'),
-  { ssr: false }
-)
+// const Header = dynamic(
+//   () => import('@/components/Header/Header'),
+//   { ssr: false }
+// )
 
-const About = dynamic(
-  () => import('@/components/screens/About/About'),
-  { ssr: false }
+// const About = dynamic(
+//   () => import('@/components/screens/About/About'),
+//   { ssr: false }
 
-)
-
-
-
-
+// )
 
 export default function HomePage() {
-  const {asPath} = useRouter()
+  const { asPath } = useRouter();
+  const [activeUrl, setActiveUrl] = useState<string>('/');
+  const [innerWidth, setInnerWidth] = useState<number>(1920);
+  console.log('HomePage', asPath);
+
+  useEffect(() => {
+    setActiveUrl(asPath);
+  }, [asPath]);
+
+  useEffect(() => {
+    console.log('WIDTH', innerWidth);
+    window.scroll({
+      behavior: 'smooth',
+    });
+
+    window.addEventListener('resize', displayWindowSize);
+
+    function displayWindowSize() {
+      setInnerWidth(window.innerWidth);
+    }
+
+    displayWindowSize();
+
+    return () => {
+      window.removeEventListener('resize', displayWindowSize);
+    };
+  }, []);
 
   return (
     <>
@@ -36,7 +60,6 @@ export default function HomePage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      
 
       <Cursor />
 
@@ -44,14 +67,24 @@ export default function HomePage() {
         <Header />
         <main className="main">
           <Home />
-          <div style={{height: '100%', width: '100%', position: 'relative'}}>
-            <About className={`page ${asPath === '/#456' ? 'active' : ''}`} />
-            <Resume className={`page ${asPath === '/#789' ? 'active' : ''}`} />
+          <div style={{ height: '100%', width: '100%', position: 'relative' }}>
+            <Main
+              id={innerWidth < 1200 ? '123' : ''}
+              className={`page ${activeUrl === '/#123' ? 'active' : ''}`}
+            />
+            <About
+              id={innerWidth < 1200 ? '456' : ''}
+              className={`page ${activeUrl === '/#456' ? 'active' : ''}`}
+            />
+            <Resume
+              id={innerWidth < 1200 ? '789' : ''}
+              className={`page ${activeUrl === '/#789' ? 'active' : ''}`}
+            />
           </div>
         </main>
       </Contaier>
 
-      <Background/>
+      <Background />
     </>
   );
 }

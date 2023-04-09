@@ -1,9 +1,10 @@
 type Props = {
   className?: string;
+  id?: string
 };
 
 const Resume: React.FC<Props> = (props) => (
-  <div  className={props.className}>
+  <div id={props.id} className={props.className}>
     <h2>Резюме</h2>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum dignissimos

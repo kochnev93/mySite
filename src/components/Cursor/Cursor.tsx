@@ -6,6 +6,9 @@ const Cursor: FC = () => {
 
   useEffect(() => {
     function initCursor() {
+      
+    
+
       var mouseX = window.innerWidth / 2;
       var mouseY = window.innerHeight / 2;
 

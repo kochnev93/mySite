@@ -81,6 +81,7 @@
     border-radius: 50%;
     border: 4px solid white;
     margin: 0 auto;
+    background: white;
 
     img {
       width: 100%;
@@ -105,13 +106,72 @@
   left: 0;
   right: 0;
   width: 100%;
-  height: 40px;
+  height: 60px;
   z-index: 15;
 
-  button {
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
     width: 50%;
     height: 100%;
+    position: relative;
+
+
+    a{
+      flex: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: white;
+      font-size: 12px;
+      height: 100%;
+      width: 100%;
+      
+
+      span{
+        margin-right: 10px;
+        transition: all .5s ease;
+      }
+
+      svg{
+        font-size: 16px;
+      }
+
+    }
+
+    a:hover{
+      color: #ffc810;
+      span{
+        margin-right: 15px;
+      }
+    }
+
+
   }
+
+  div:nth-child(1):before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background: radial-gradient(ellipse at top, rgba(197, 202, 213, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+
+  }
+}
+
+.actions::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: radial-gradient(ellipse at left, rgba(197, 202, 213, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
 }
 
 @keyframes img {

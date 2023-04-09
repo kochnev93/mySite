@@ -16,6 +16,8 @@
     border-bottom: 1px solid grey;
   display: none;
   background-color: #222222;
+  position: relative;
+  z-index: 10;
 
   span{
     font-size: 10px;
@@ -49,6 +51,7 @@
   list-style: none;
   border-radius: 5px;
   height: auto;
+
 
   li {
     font-size: 18px;
@@ -100,6 +103,19 @@
   }
 }
 
+.nav{
+  transform: translate(0px, -85px);
+  transition: transform .4s ease;
+
+  -webkit-box-shadow: 0px 0px 17px 4px rgba(0, 0, 0, 0.26);
+  -moz-box-shadow: 0px 0px 17px 4px rgba(0, 0, 0, 0.26);
+  box-shadow: 0px 0px 17px 4px rgba(0, 0, 0, 0.26);
+}
+
+.nav.active{
+  transform: translate(0px, 0px);
+}
+
 @media (max-width: 1200px) {
   .header {
     position: fixed;
@@ -107,9 +123,9 @@
     right: auto;
     top: auto;
 
-    -webkit-box-shadow: 0px 0px 17px 4px rgba(0, 0, 0, 0.26);
-    -moz-box-shadow: 0px 0px 17px 4px rgba(0, 0, 0, 0.26);
-    box-shadow: 0px 0px 17px 4px rgba(0, 0, 0, 0.26);
+    // -webkit-box-shadow: 0px 0px 17px 4px rgba(0, 0, 0, 0.26);
+    // -moz-box-shadow: 0px 0px 17px 4px rgba(0, 0, 0, 0.26);
+    // box-shadow: 0px 0px 17px 4px rgba(0, 0, 0, 0.26);
   }
 }
 

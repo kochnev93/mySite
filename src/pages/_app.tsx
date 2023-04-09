@@ -9,37 +9,32 @@ function Loading() {
   const router = useRouter();
 
   useEffect(() => {
-    const handleStart = (url) => {
-      url !== router.asPath && setLoading(true);
+    const handleStart = () => {
+      setLoading(true);
     };
 
-    const handleComplete = (url) => {
-      url === router.asPath &&
-        setTimeout(() => {
-          setLoading(false);
-        }, 5000);
+    const handleComplete = () => {
+      let timeout = setTimeout(() => {setLoading(false)}, 500);
+      //return clearTimeout(timeout)
     };
 
     router.events.on('routeChangeStart', handleStart);
     router.events.on('routeChangeComplete', handleComplete);
-    router.events.on('routeChangeError', handleComplete);
 
     return () => {
       router.events.off('routeChangeStart', handleStart);
       router.events.off('routeChangeComplete', handleComplete);
-      router.events.off('routeChangeError', handleComplete);
     };
   }, [router.events]);
 
-  return loading && (<h1>Загрузка</h1>)
+  return loading ? <Preloader/> : <></>;
 }
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-    <Loading />
-    <Component {...pageProps} />
+       <Loading /> 
+      <Component {...pageProps} />
     </>
-  )
-
+  );
 }
