@@ -7,11 +7,16 @@ type Props = {
 
 const Contaier = ({ children }: Props) => {
   return (
-    <div className="layoat">
-      <div className="container">
-        {children}
-        </div>
-    </div>
+    // <div className="layoat">
+    //   <div className="container">
+    //     {children}
+    //     </div>
+    // </div>
+
+    <div className="container">
+      {children}
+      </div>
+
   );
 };
 
