@@ -35,23 +35,6 @@ const PrintedText: React.FC<Props> = (props) => {
       result += text[line][count];
       setString(result + ' |');
       count++;
-
-      //console.log('before count', count);
-      //console.log('result', result);
-      //console.log('after count', count);
-      //console.warn(text[line].length, count >= text[line].length);
-
-      //   if (line === text.length) {
-      //     clearTimeout(interval);
-      //     return;
-      //   }
-
-      //   if (count + 1 >= text[line].length) {
-      //     deleteLine();
-      //     //clearTimeout(interval);
-      //     //return;
-      //   }
-
       
       typeLine();
       
@@ -61,7 +44,6 @@ const PrintedText: React.FC<Props> = (props) => {
   }
 
   function deleteLine() {
-    //console.log('DELETE COUNT', count);
 
     if (count <= 0){
         count = 0;
@@ -82,19 +64,8 @@ const PrintedText: React.FC<Props> = (props) => {
 
       count--;
 
-    //   if (count <= 0) {
-    //     //line++;
-    //     clearTimeout(interval);
-    //     return;
-    //     //typeLine();
-    //   }
-
       deleteLine();
     }, 100);
-  }
-
-  function getRandomInt(max) {
-    return Math.floor(Math.random() * Math.floor(max));
   }
 
   return <div className={`printed_text ${props.className}` } style={{color: 'yellow'}}>{string}</div>;

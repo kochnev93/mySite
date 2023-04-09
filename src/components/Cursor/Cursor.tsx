@@ -2,12 +2,10 @@ import { FC, useEffect, useRef } from 'react';
 import styles from './Cursor.module.scss';
 
 const Cursor: FC = () => {
-  const cursorRef = useRef<HTMLElement>();
+  const cursorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     function initCursor() {
-      
-    
 
       var mouseX = window.innerWidth / 2;
       var mouseY = window.innerHeight / 2;
@@ -21,7 +19,10 @@ const Cursor: FC = () => {
         update: function () {
           let l = this.x - this.w / 2;
           let t = this.y - this.h / 2;
-          this.el.style.transform = `translate3d(${l}px, ${t}px, 0px)`;
+          if(this.el){
+            this.el.style.transform = `translate3d(${l}px, ${t}px, 0px)`;
+          }
+          
         },
       };
 
