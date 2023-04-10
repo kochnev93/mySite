@@ -21,20 +21,14 @@ const Header: FC = () => {
   const [menu, setMenu] = useState([
     {
       id: 1,
-      title: 'Главная',
-      href: '#123',
+      title: 'Обо мне',
+      href: '',
       activeClass: '',
     },
     {
       id: 2,
-      title: 'Обо мне',
-      href: '#456',
-      activeClass: '',
-    },
-    {
-      id: 3,
       title: 'Резюме',
-      href: '#789',
+      href: '#resume',
       activeClass: '',
     },
   ]);
@@ -96,31 +90,6 @@ const Header: FC = () => {
             );
           })}
 
-          {/* <li className={`${asPath === '/' ? styles.active : ''}`}>
-            <Link href={'/'}>
-              <FaUserAlt />
-              <span>Главная</span>
-            </Link>
-          </li>
-          <li className={`${asPath === '/#456' ? styles.active : ''}`}>
-            <Link href={'#456'}>
-              <FaUserAlt />
-              <span>Обо мне</span>
-            </Link>
-          </li>
-          <li className={`${asPath === '/#789' ? styles.active : ''}`}>
-            <Link href={'#789'}>
-              <FaUserAlt />
-              <span>Резюме</span>
-            </Link>
-          </li> */}
-
-          {/* <li className={`${asPath === '/123' ? styles.active : ''}`}>
-            <Link href={'/123'}>
-              <FaUserAlt />
-              <span>Тест 2</span>
-            </Link>
-          </li> */}
         </ul>
       </nav>
     </header>

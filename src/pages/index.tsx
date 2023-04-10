@@ -68,17 +68,13 @@ export default function HomePage() {
         <main className="main">
           <Home />
           <div style={{ height: '100%', width: '100%', position: 'relative' }}>
-            <Main
-              id={innerWidth < 1200 ? '123' : ''}
-              className={`page ${activeUrl === '/#123' ? 'active' : ''}`}
-            />
             <About
-              id={innerWidth < 1200 ? '456' : ''}
-              className={`page ${activeUrl === '/#456' ? 'active' : ''}`}
+              id={innerWidth < 1200 ? 'about' : ''}
+              className={`page ${activeUrl === '/' ? 'active' : ''}`}
             />
             <Resume
-              id={innerWidth < 1200 ? '789' : ''}
-              className={`page ${activeUrl === '/#789' ? 'active' : ''}`}
+              id={innerWidth < 1200 ? 'resume' : ''}
+              className={`page ${activeUrl === '/#resume' ? 'active' : ''}`}
             />
           </div>
         </main>

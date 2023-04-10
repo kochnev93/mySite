@@ -68,7 +68,7 @@ const PrintedText: React.FC<Props> = (props) => {
     }, 100);
   }
 
-  return <div className={`printed_text ${props.className}` } style={{color: 'yellow'}}>{string}</div>;
+  return <div className={`printed_text ${props.className}` } style={{color: 'var(--main-color)'}}>{string}</div>;
 };
 
 export default PrintedText;

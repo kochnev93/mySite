@@ -1,3 +1,14 @@
-.logo{
-    color: red
+.resume {
+  //position: relative;
+}
+
+.resume::after {
+  content: 'Resume';
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  font-size: 120px;
+  font-weight: bold;
+  color: black;
+  opacity: 0.05;
 }
