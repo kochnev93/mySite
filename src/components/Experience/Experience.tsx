@@ -1,55 +1,32 @@
 import { FC } from 'react';
 import { ReactNode } from 'react';
+import { experienceData } from '@/data/experience/experience';
+import cx from 'classnames';
 
 //Styles
-import styles from './Experience.module.scss'
+import styles from './Experience.module.scss';
 
-// type Props = {
-//     children: ReactNode,
-//     title: string,
-//   };
+//Components
+import ResponsibilitiesItem from './ResponsibilitiesItem';
+
 
 const Experience: FC = () => {
-    const experience = [
-        {
-            id: 1,
-            company: 'Стоматологический центр "Мой Зубной"',
-            position: 'Главный специалист ИТ',
-            responsibilities: [
-                'Разработка модуля для складского учета',
-                'Поддержка сайта',
-            ]
-        },
-        {
-            id: 2,
-            company: 'Стоматологический центр "Мой Зубной"',
-            position: 'Специалист ИТ',
-            responsibilities: [
-                'Разработка модуля для складского учета',
-                'Поддержка сайта',
-                'Заявки',
-            ]
-        }
-]
-
   return (
     <ul className={styles.experience}>
-        {experience.map(item => {
-            return(
-                <li key={item.id}>
-                    <h4>{item.position}</h4>
-                    <span>{item.company}</span>
-                    <ul>
-                        {item.responsibilities.map((skill, index) => {
-                            return(
-                                <li key={index}>{skill}</li>
-                            )
-                        })}
-                    </ul>
-
-                </li>
-            )
-        })}
+      {experienceData.map((item) => {
+        return (
+          <li className={styles.experience_item} key={item.id}>
+            <span className={cx(styles.years, {[styles.present]: item.presentTime})}>
+              {item.yearStart} - {item.presentTime ? 'н.в' : item.yearEnd}
+            </span>
+            <h4>{item.position}</h4>
+            <span className={styles.company}>{item.company}</span>
+            <ul className={styles.responsibilities}>
+              <ResponsibilitiesItem responsibilities={item.responsibilities} />
+            </ul>
+          </li>
+        );
+      })}
     </ul>
   );
 };

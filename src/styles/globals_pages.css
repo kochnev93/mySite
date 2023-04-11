@@ -22,7 +22,6 @@
 .page_title {
     position: relative;
     padding: 15px 0;
-    margin-bottom: 20px;
   }
   
   .page_title h2:first-letter {
@@ -60,11 +59,11 @@
   }
 
   .page_item{
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
   
   .page {
-    padding: 10px 40px;
+    padding: 0 40px;
     position: absolute;
     overflow: hidden;
     top: 2%;
