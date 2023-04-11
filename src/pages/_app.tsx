@@ -1,5 +1,6 @@
 import Preloader from '@/components/Preloader/Preloader';
 import '@/styles/globals.css';
+import '@/styles/globals_pages.css';
 import '@/styles/vars.css';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';

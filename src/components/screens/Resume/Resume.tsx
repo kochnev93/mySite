@@ -1,5 +1,6 @@
 import cx from 'classnames';
 import styles from './Resume.module.scss';
+import Experience from '@/components/Experience/Experience';
 
 type Props = {
   className?: string;
@@ -7,7 +8,7 @@ type Props = {
 };
 
 const Resume: React.FC<Props> = (props) => (
-  <div id={props.id} className={cx(styles.resume, props.className)}>
+  <div id={props.id} className={cx(styles.resume, props.className)} data-label={'Resume'}>
     <div className="page_title">
       <h2>Резюме</h2>
     </div>
@@ -16,6 +17,8 @@ const Resume: React.FC<Props> = (props) => (
       <p>
         Здесь будет резюме...
       </p>
+
+      <Experience/>
     </div>
   </div>
 );

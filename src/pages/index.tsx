@@ -12,29 +12,19 @@ import Background from '@/components/Background/Background';
 import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 
-// const Header = dynamic(
-//   () => import('@/components/Header/Header'),
-//   { ssr: false }
-// )
 
-// const About = dynamic(
-//   () => import('@/components/screens/About/About'),
-//   { ssr: false }
-
-// )
 
 export default function HomePage() {
   const { asPath } = useRouter();
   const [activeUrl, setActiveUrl] = useState<string>('/');
   const [innerWidth, setInnerWidth] = useState<number>(1920);
-  console.log('HomePage', asPath);
+
 
   useEffect(() => {
     setActiveUrl(asPath);
   }, [asPath]);
 
   useEffect(() => {
-    console.log('WIDTH', innerWidth);
     window.scroll({
       behavior: 'smooth',
     });
