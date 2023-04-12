@@ -1,51 +1,47 @@
 import { FC, useEffect, useState } from 'react';
-import { GetStaticProps, GetStaticPaths } from 'next';
-import styles from './Header.module.scss';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { RxHamburgerMenu } from 'react-icons/Rx';
-import PrintedText from '../PrintedText/PrintedText';
 import cx from 'classnames';
+import { menuData } from '@/data/menu/menu';
+
+//Styles
+import styles from './Header.module.scss';
+
+//Components
+import PrintedText from '../PrintedText/PrintedText';
+import Menu from './Menu';
 
 //Icons
 import { FaUserAlt } from 'react-icons/Fa';
+import { RxHamburgerMenu } from 'react-icons/Rx';
 
+//Next
 import Image from 'next/image';
-import scrollPage from '@/utils/scroll';
+import Link from 'next/link';
+
+
+
 
 const Header: FC = () => {
   const { asPath } = useRouter();
 
   const [visible, setVisible] = useState(true);
 
-  const [menu, setMenu] = useState([
-    {
-      id: 1,
-      title: 'Обо мне',
-      href: '',
-      activeClass: '',
-    },
-    {
-      id: 2,
-      title: 'Резюме',
-      href: '#resume',
-      activeClass: '',
-    },
-  ]);
+  const [menu, setMenu] = useState(menuData);
 
   useEffect(() => {
-    let newMnenu = menu.map((item) => {
+    let newMenu = menu.map((item) => {
       if (asPath === `/${item.href}`) {
         return { ...item, activeClass: styles.active };
       }
       return { ...item, activeClass: '' };
     });
 
-    setMenu(newMnenu);
+    setMenu(newMenu);
   }, [asPath]);
 
   return (
     <header className={styles.header}>
+
       <div className={styles.profile}>
         <div className={styles.profile__logo}>
           <div className={styles.logo__wrapper}>
@@ -71,16 +67,16 @@ const Header: FC = () => {
           />
         </div>
       </div>
-      <nav className={cx(styles.nav, { [styles.active]: visible })}>
+
+      <Menu items={menu} visible={visible}/>
+
+      {/* <nav className={cx(styles.nav, { [styles.active]: visible })}>
         <ul className={styles.menu}>
           {menu.map((item) => {
             return (
               <li
                 key={item.id}
                 className={item.activeClass}
-                // onClick={() => {
-                //   scrollPage(item.href)
-                // }}
               >
                 <Link href={item.href}>
                   <FaUserAlt />
@@ -91,7 +87,7 @@ const Header: FC = () => {
           })}
 
         </ul>
-      </nav>
+      </nav> */}
     </header>
   );
 };

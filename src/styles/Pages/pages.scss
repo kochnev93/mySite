@@ -1,4 +1,6 @@
-/*Надпись на фоне страницы*/
+@import '_title.scss';
+@import '_scroll.scss';
+
 .page::after {
   content: attr(data-label);
   position: absolute;
@@ -16,16 +18,6 @@
   }
 }
 
-
-
-.page_content {
-  padding: 15px 0;
-}
-
-.page_item {
-  margin-bottom: 30px;
-}
-
 .page {
   padding: 0 40px;
   position: absolute;
@@ -34,42 +26,20 @@
   left: 0;
   right: 0;
   bottom: 2%;
-
   background-color: #222;
   transform-origin: center left;
   opacity: 0;
-
   transform: translate(0, 800px);
-
   transition: visibility 1s linear, opacity 1s linear;
-
   display: block;
   width: 100%;
   height: 96%;
   max-height: 100%;
   overflow-y: scroll;
-
   opacity: 0;
   visibility: hidden;
   z-index: 9;
-
   animation: pageAnimateOut 1s ease;
-}
-
-.page::-webkit-scrollbar {
-  width: 5px;
-  background-color: rgba(252, 206, 0, 0.2);
-}
-
-.page::-webkit-scrollbar-thumb {
-  background-color: #ffc810;
-  -webkit-border-radius: 6px;
-  border-radius: 6px;
-}
-
-.page::-webkit-scrollbar-track {
-  border-radius: 5px;
-  background-color: transparent;
 }
 
 .page.active {
@@ -78,6 +48,14 @@
   opacity: 1;
   z-index: 10;
   animation: pageAnimateIn 1s ease;
+}
+
+.page_content {
+  padding: 15px 0;
+}
+
+.page_item {
+  margin-bottom: 30px;
 }
 
 @keyframes pageAnimateIn {

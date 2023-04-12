@@ -21,21 +21,21 @@ const Resume: React.FC<Props> = (props) => (
     data-label={'Resume'}
   >
     <PageItem title="Резюме" className={styles.resume_block}>
-      <div>
+   
         <div className={styles.resume_title}>
           <MdWorkOutline />
           <h3>Опыт работы</h3>
         </div>
-        <Experience />
-      </div>
 
-      <div>
+        <Experience />
+    
         <div className={styles.resume_title}>
           <MdSchool />
           <h3>Образование</h3>
         </div>
+        
         <Education />
-      </div>
+   
     </PageItem>
 
     <PageItem title="Ключевые навыки">
