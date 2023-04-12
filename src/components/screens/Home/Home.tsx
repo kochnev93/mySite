@@ -46,7 +46,7 @@ const Home: FC = () => {
             <IoLogoGithub />
           </a>
 
-          <a href="">
+          <a href="https://www.linkedin.com/in/kochnev-ae">
             <IoLogoLinkedin />
           </a>
 
@@ -54,7 +54,7 @@ const Home: FC = () => {
             <FaTelegram />
           </a>
 
-          <a href="">
+          <a href="tel:+79995285154">
             <FaPhoneSquareAlt />
           </a>
         </div>

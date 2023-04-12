@@ -75,7 +75,7 @@
     transform-origin: center left;
     opacity: 0;
   
-    transform: translate(0, 500px);
+    transform: translate(0, 800px);
   
     transition: visibility 1s linear, opacity 1s linear;
   
@@ -116,9 +116,10 @@
     animation: pageAnimateIn 1s ease;
   }
   
+
   @keyframes pageAnimateIn {
     0% {
-      transform: translate(0, 500px);
+      transform: translate(0, 800px);
       opacity: 0;
     }
   
@@ -135,7 +136,7 @@
     }
   
     100% {
-      transform: translate(0, -500px);
+      transform: translate(0, -800px);
       opacity: 0;
     }
   }
@@ -169,4 +170,12 @@
       z-index: 10;
       animation: none;
     }
+  }
+
+
+  @media (max-width: 650px) {
+    .page {
+ padding: 0 20px;
+    }
+
   }

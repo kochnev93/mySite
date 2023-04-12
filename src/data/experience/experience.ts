@@ -30,5 +30,29 @@ export const experienceData = [
             'Техническая поддержка пользователей',
 
         ]
+    },
+    {
+        id: 3,
+        company: 'ООО "Кар-финанс"',
+        yearStart: '2020',
+        yearEnd: '2020',
+        presentTime: false,
+        position: 'Веб-разработчик',
+        responsibilities: [
+            'Разработка сайтов для компании',
+        ]
+    },
+    {
+        id: 4,
+        company: 'Тихоокеанский государственный университет',
+        yearStart: '2018',
+        yearEnd: '2018',
+        presentTime: false,
+        position: 'Графический дизайнер',
+        responsibilities: [
+            'Разработка брендбука',
+            'Разработка макетов для официального сайта',
+            'Верстка печатной продукции',
+        ]
     }
 ]

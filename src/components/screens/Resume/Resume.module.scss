@@ -1,6 +1,11 @@
+// .resume_block {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr;
+// }
+
 .resume_block {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: block;
+  
 }
 
 .resume_block > div:nth-child(1) {

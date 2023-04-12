@@ -1,4 +1,5 @@
 import cx from 'classnames';
+import { useInView } from 'react-intersection-observer';
 
 //Styles
 import styles from './About.module.scss';
@@ -13,21 +14,26 @@ type Props = {
   id?: string;
 };
 
-const About: React.FC<Props> = (props) => (
-  <div id={props.id} className={cx(styles.about, props.className)} data-label={'About'}>
+const About: React.FC<Props> = (props) => {
+  const { ref, inView, entry } = useInView({
+    threshold: 0,
+  });
+  
+  return (
+  <div id={props.id} className={cx(styles.about, props.className, {['view']: inView})} data-label={'About'} ref={ref}>
 
-    <PageItem title='Обо мне'>
+    <PageItem title='Обо мне' className={cx({[styles.view]: inView})}>
       <p>
-        Привет! Меня зовут Антон и я Front-end разработчик из Санкт-Петербурга.
+        Добрый день! Я Frontend разработчик, занимаюсь фронтенд разработкой более 3-х лет. Живу в Санкт-Петербурге.
       </p>
     </PageItem>
 
 
-    <PageItem title='Ключевые навыки'>
+    <PageItem title='Ключевые навыки' className={cx({[styles.view]: inView})}>
       <Skills/>
     </PageItem>
 
   </div>
-);
+)};
 
 export default About;

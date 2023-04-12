@@ -9,7 +9,7 @@ type Props = {
 
 const PageItem: FC<Props> = (props) => {
   return (
-    <div className='page_item'>
+    <div className={`page_item ${props.className ? props.className : '' }`.trim()}>
 
         <div className="page_title">
           <h2>{props.title}</h2>

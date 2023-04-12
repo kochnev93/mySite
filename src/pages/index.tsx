@@ -6,11 +6,13 @@ import Header from '@/components/Header/Header';
 import About from '@/components/screens/About/About';
 import Resume from '@/components/screens/Resume/Resume';
 import Main from '@/components/screens/Main/Main';
-
+import Footer from '@/components/Footer/Footer';
 import { useRouter } from 'next/router';
 import Background from '@/components/Background/Background';
 import dynamic from 'next/dynamic';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
+
 
 
 
@@ -18,6 +20,13 @@ export default function HomePage() {
   const { asPath } = useRouter();
   const [activeUrl, setActiveUrl] = useState<string>('/');
   const [innerWidth, setInnerWidth] = useState<number>(1920);
+
+  const observerRef = useRef<HTMLDivElement | null>(null);
+
+  const { ref, inView, entry } = useInView({
+    /* Optional options */
+    threshold: 0,
+  });
 
 
   useEffect(() => {
@@ -41,6 +50,25 @@ export default function HomePage() {
       window.removeEventListener('resize', displayWindowSize);
     };
   }, []);
+
+
+//   useEffect(() => {
+// // Создаем новый observer (наблюдатель)
+// let observer = new IntersectionObserver(function (entries) {
+//   entries.forEach(function (entry) {
+//       // Выводим в консоль сам элемент
+//       console.log(entry.target);
+//       // Выводим в консоль true (если элемент виден) или false (если нет)
+//       console.log(entry.isIntersecting);
+//   });
+// });
+
+// // Задаем элемент для наблюдения
+// //let el = document.querySelector('.element');
+
+// // Прикрепляем его к «наблюдателю»
+// observer.observe(observerRef.current);
+//   }, []);
 
   return (
     <>
@@ -68,7 +96,12 @@ export default function HomePage() {
             />
           </div>
         </main>
+
+        
+        
       </Contaier>
+      <Footer/>
+      
 
       <Background />
     </>

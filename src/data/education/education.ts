@@ -1,5 +1,14 @@
 export const educationData = [
     {
+        id: 3,
+        university: 'Skillbox',
+        faculty: 'JavaScript (профессиональный уровень)',
+        specialty: '',
+        city: '',
+        yearStart: '2020',
+        yearEnd: '2020',
+    },
+    {
         id: 1,
         university: 'Тихоокеанский Государственный университет',
         faculty: 'Факультет компьютерных и фундаментальных наук',
@@ -17,4 +26,5 @@ export const educationData = [
         yearStart: '2011',
         yearEnd: '2015',
     },
+
 ]
