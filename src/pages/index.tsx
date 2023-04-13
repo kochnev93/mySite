@@ -12,9 +12,7 @@ import Background from '@/components/Background/Background';
 import dynamic from 'next/dynamic';
 import { useEffect, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-
-
-
+import Portfolio from '@/components/screens/Portfolio/Portfollio';
 
 export default function HomePage() {
   const { asPath } = useRouter();
@@ -27,7 +25,6 @@ export default function HomePage() {
     /* Optional options */
     threshold: 0,
   });
-
 
   useEffect(() => {
     setActiveUrl(asPath);
@@ -51,24 +48,23 @@ export default function HomePage() {
     };
   }, []);
 
+  //   useEffect(() => {
+  // // Создаем новый observer (наблюдатель)
+  // let observer = new IntersectionObserver(function (entries) {
+  //   entries.forEach(function (entry) {
+  //       // Выводим в консоль сам элемент
+  //       console.log(entry.target);
+  //       // Выводим в консоль true (если элемент виден) или false (если нет)
+  //       console.log(entry.isIntersecting);
+  //   });
+  // });
 
-//   useEffect(() => {
-// // Создаем новый observer (наблюдатель)
-// let observer = new IntersectionObserver(function (entries) {
-//   entries.forEach(function (entry) {
-//       // Выводим в консоль сам элемент
-//       console.log(entry.target);
-//       // Выводим в консоль true (если элемент виден) или false (если нет)
-//       console.log(entry.isIntersecting);
-//   });
-// });
+  // // Задаем элемент для наблюдения
+  // //let el = document.querySelector('.element');
 
-// // Задаем элемент для наблюдения
-// //let el = document.querySelector('.element');
-
-// // Прикрепляем его к «наблюдателю»
-// observer.observe(observerRef.current);
-//   }, []);
+  // // Прикрепляем его к «наблюдателю»
+  // observer.observe(observerRef.current);
+  //   }, []);
 
   return (
     <>
@@ -94,14 +90,15 @@ export default function HomePage() {
               id={innerWidth < 1200 ? 'resume' : ''}
               className={`page ${activeUrl === '/#resume' ? 'active' : ''}`}
             />
+
+            <Portfolio
+              id={innerWidth < 1200 ? 'portfolio' : ''}
+              className={`page ${activeUrl === '/#portfolio' ? 'active' : ''}`}
+            />
           </div>
         </main>
-
-        
-        
       </Contaier>
-      <Footer/>
-      
+      <Footer />
 
       <Background />
     </>

@@ -4,8 +4,8 @@
     }
 }
 
-@mixin _979 {
-    @media (max-width: 979px){
+@mixin _500 {
+    @media (max-width: 500px){
         @content;
     }
 }

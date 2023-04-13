@@ -8,6 +8,7 @@ import styles from './Header.module.scss';
 //Icons
 import { FaUserAlt } from 'react-icons/Fa';
 import { CgFileDocument } from 'react-icons/Cg';
+import { BsPersonWorkspace } from 'react-icons/Bs';
 
 //Next
 import Link from 'next/link';
@@ -23,6 +24,8 @@ const getIcon = (icon: string) => {
       return <FaUserAlt />;
     case 'CgFileDocument':
       return <CgFileDocument />;
+    case 'BsPersonWorkspace':
+      return <BsPersonWorkspace />;
     default:
       return <FaUserAlt />;
   }

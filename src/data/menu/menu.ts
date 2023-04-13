@@ -13,6 +13,13 @@ export const menuData = [
     activeClass: '',
     icon: 'CgFileDocument'
   },
+  {
+    id: 3,
+    title: 'Опыт',
+    href: '#portfolio',
+    activeClass: '',
+    icon: 'BsPersonWorkspace'
+  },
 ];
 
 export interface IMenu {

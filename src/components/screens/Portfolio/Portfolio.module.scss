@@ -1,0 +1,83 @@
+@import '@/styles/mixins/media_mixin.scss';
+
+.portfolio_block{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+@include _500 {
+    .portfolio_block{
+        grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    position: relative;
+    background-color: var(--main-color);
+    height: 200px;
+    overflow: hidden;
+    border-radius: 5px;
+
+    img{
+        width: 100%;
+    }
+
+    h6{
+        font-size: 32px;
+        z-index: 10;
+        transition: all .5s ease;
+        margin-bottom: 10px;
+    }
+
+    a{
+        display: none;
+        z-index: 10;
+        transition: all .5s ease;
+        background-color: var(--second-color);
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-size: 14px;
+        transition: all .5s ease;
+    }
+
+
+
+}
+
+.card::before{
+    content: '';
+    position: absolute;
+    background-color: var(--second-color);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: .95;
+    // z-index: 1000;
+    transition: all .5s ease;
+}
+
+.card:hover{
+    background-position: 0% 50% !important;
+
+    &:before{
+        background-color: var(--main-color);
+        opacity: 1;
+    }
+
+    h6{
+        color: var(--second-color);
+    }
+
+    a{
+        display: block;
+
+    }
+
+}
