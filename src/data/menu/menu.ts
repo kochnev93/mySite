@@ -15,7 +15,7 @@ export const menuData = [
   },
   {
     id: 3,
-    title: 'Опыт',
+    title: 'Кейсы',
     href: '#portfolio',
     activeClass: '',
     icon: 'BsPersonWorkspace'

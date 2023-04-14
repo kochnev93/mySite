@@ -7,21 +7,24 @@ import styles from './Portfolio.module.scss';
 type Props = {
   children?: ReactNode;
   title: string;
+  href: string;
+  img: string;
   subtitle?: string;
 };
 
-const style = {
-    background: `url('/smart_school.png')`,
+
+
+const PortfolioCard: React.FC<Props> = (props) => {
+  const style = {
+    background: `url('/${props.img}')`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
 }
 
-const PortfolioCard: React.FC<Props> = (props) => {
   return (
   <div className={styles.card} style={style}>
-    {/* <img src="./smart_school.png" alt="Smart School" /> */}
-    <h6>Smart School</h6>
-    <a href="/123">Подробнее</a>
+    <h6>{props.title}</h6>
+    <a href={`/${props.href}`}>Подробнее</a>
   </div>
   );
 };

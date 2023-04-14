@@ -1,4 +1,5 @@
 import cx from 'classnames';
+import { portfolioData } from '@/data/portfolio/portfolio';
 
 //Styles
 import styles from './Portfolio.module.scss';
@@ -10,6 +11,7 @@ import PortfolioCard from './PortfolioCard';
 //Icons
 import { MdWorkOutline } from 'react-icons/Md';
 import { MdSchool } from 'react-icons/Md';
+
 
 type Props = {
   className?: string;
@@ -25,10 +27,14 @@ const Portfolio: React.FC<Props> = (props) => {
     >
       <PageItem title="Портфолио">
         <div className={styles.portfolio_block}>
-          <PortfolioCard title="Smart Schhol" />
-          <PortfolioCard title="Smart Schhol" />
-          <PortfolioCard title="Smart Schhol" />
-          <PortfolioCard title="Smart Schhol" />
+          {
+            portfolioData.map(item => {
+              return(
+                <PortfolioCard key={item.id} title={item.title} href={item.href} img={item.img} />
+              )
+            })
+          }
+
         </div>
       </PageItem>
     </div>
