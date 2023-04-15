@@ -11,8 +11,8 @@ import PrintedText from '../PrintedText/PrintedText';
 import Menu from './Menu';
 
 //Icons
-import { FaUserAlt } from 'react-icons/Fa';
-import { RxHamburgerMenu } from 'react-icons/Rx';
+import { FaUserAlt } from 'react-icons/fa';
+import { RxHamburgerMenu } from 'react-icons/rx';
 
 //Next
 import Image from 'next/image';

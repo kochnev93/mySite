@@ -2,15 +2,15 @@ import { FC } from 'react';
 import cx from 'classnames';
 
 //Icons
-import { FaReact } from 'react-icons/Fa';
-import { SiNextdotjs } from 'react-icons/Si';
-import {TbBrandJavascript} from 'react-icons/Tb'
-import {TbBrandTypescript} from 'react-icons/Tb'
-import {SiMysql} from 'react-icons/Si'
-import {SiExpress} from 'react-icons/Si'
-import {AiOutlineHtml5} from 'react-icons/Ai'
-import {BsFiletypeScss} from 'react-icons/Bs'
-import {BsWordpress} from 'react-icons/Bs'
+import { FaReact } from 'react-icons/fa';
+import { SiNextdotjs } from 'react-icons/si';
+import {TbBrandJavascript} from 'react-icons/tb'
+import {TbBrandTypescript} from 'react-icons/tb'
+import {SiMysql} from 'react-icons/si'
+import {SiExpress} from 'react-icons/si'
+import {AiOutlineHtml5} from 'react-icons/ai'
+import {BsFiletypeScss} from 'react-icons/bs'
+import {BsWordpress} from 'react-icons/bs'
 
 
 //Styles

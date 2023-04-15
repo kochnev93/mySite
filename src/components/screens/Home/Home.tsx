@@ -3,14 +3,14 @@ import styles from './Home.module.scss';
 import PrintedText from '@/components/PrintedText/PrintedText';
 import Image from 'next/image';
 
-import { HiOutlineDownload } from 'react-icons/Hi';
-import { FaTelegramPlane } from 'react-icons/Fa';
+import { HiOutlineDownload } from 'react-icons/hi';
+import { FaTelegramPlane } from 'react-icons/fa';
 
 //Icons
-import { IoLogoGithub } from 'react-icons/Io';
-import { IoLogoLinkedin } from 'react-icons/Io';
-import { FaTelegram } from 'react-icons/Fa';
-import { FaPhoneSquareAlt } from 'react-icons/Fa';
+import { IoLogoGithub } from 'react-icons/io';
+import { IoLogoLinkedin } from 'react-icons/io';
+import { FaTelegram } from 'react-icons/fa';
+import { FaPhoneSquareAlt } from 'react-icons/fa';
 
 const Home: FC = () => {
   return (

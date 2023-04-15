@@ -6,9 +6,9 @@ import { IMenu } from '@/data/menu/menu';
 import styles from './Header.module.scss';
 
 //Icons
-import { FaUserAlt } from 'react-icons/Fa';
-import { CgFileDocument } from 'react-icons/Cg';
-import { BsPersonWorkspace } from 'react-icons/Bs';
+import { FaUserAlt } from 'react-icons/fa';
+import { CgFileDocument } from 'react-icons/cg';
+import { BsPersonWorkspace } from 'react-icons/bs';
 
 //Next
 import Link from 'next/link';
