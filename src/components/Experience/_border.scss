@@ -1,0 +1,42 @@
+@import '@/styles/mixins/border.scss';
+
+.experience_item:nth-child(1):before {
+    @include border;
+    left: 0;
+    bottom: 0;
+  }
+  
+  .experience_item:nth-child(1):after {
+    @include border-vertical;
+    right: 0;
+    top: 0;
+  }
+  
+  .experience_item:nth-child(2):before {
+    @include border;
+    left: 0;
+    bottom: 0;
+  }
+  
+  .experience_item:nth-child(3):after {
+    @include border-vertical;
+    right: 0;
+    top: 0;
+  }
+  
+  @media (max-width: 1200px) {
+    .experience_item:nth-child(3):before {
+      @include border;
+      left: 0;
+      bottom: 0;
+    } 
+    
+    .experience_item:nth-child(3):after {
+      content: none;
+    }
+  
+    .experience_item:nth-child(1):after {
+      content: none;
+    }
+    
+  }

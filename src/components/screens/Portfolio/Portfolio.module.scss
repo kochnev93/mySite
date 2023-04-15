@@ -1,0 +1,129 @@
+@import '@/styles/mixins/media_mixin.scss';
+
+.portfolio_block {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
+}
+
+// .portfolio_block.view {
+//   animation: show 1.3s ease-in-out;
+// }
+
+@function grid-width($n) {
+  @return $n;
+}
+
+@for $i from 1 to 5 {
+  $side: $i * 0.2;
+  .portfolio_block.view li:nth-child(#{$i}) {
+    animation: show .8s ease-in-out;
+    animation-delay: #{$side}s;
+
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+}
+
+.portfolio_block.view li {
+  transform: translateY(30px);
+}
+
+@keyframes show {
+  0% {
+    opacity: 0.3;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  position: relative;
+  background-color: var(--main-color);
+  height: 200px;
+  overflow: hidden;
+  border-radius: 5px;
+  z-index: 200;
+
+  img {
+    width: 100%;
+  }
+
+  h6 {
+    display: none;
+    font-size: 32px;
+    z-index: 10;
+    transition: all 0.5s ease;
+    margin-bottom: 10px;
+  }
+
+  a {
+    display: none;
+    z-index: 10;
+    transition: all 0.5s ease;
+    background-color: var(--second-color);
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: all 0.5s ease;
+    position: absolute;
+    bottom: 30px;
+    z-index: 10;
+
+    &:hover {
+      box-shadow: 0px 0px 9px 2px rgba(0, 0, 0, 0.3);
+      color: var(--main-color);
+    }
+  }
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  background-color: var(--second-color);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.75;
+}
+
+.card:hover {
+  background-position: 0% 50% !important;
+
+  &:before {
+    background: linear-gradient(60deg, #f79533, rgb(255, 217, 0));
+    opacity: 1;
+    animation: animatedgradient 5s ease alternate infinite;
+    background-size: 300% 300%;
+  }
+
+  h6 {
+    display: block;
+    color: var(--second-color);
+  }
+
+  a {
+    display: block;
+  }
+}
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

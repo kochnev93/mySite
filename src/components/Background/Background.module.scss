@@ -218,3 +218,27 @@
     opacity: 0;
   }
 }
+
+
+.square{
+  display: flex;
+  flex-wrap: wrap;
+
+  .box{
+    width: 15px;
+    height: 15px;
+
+    background-color: transparent;
+    margin: 1px;
+    box-shadow: 0 0 2px #000;
+    transition: 1.5s ease;
+    transition-duration: 0s;
+    border-radius: 3px;
+
+
+    &:hover{
+      transition-duration: 0s;
+      background-color: var(--main-color);
+    }
+  }
+}

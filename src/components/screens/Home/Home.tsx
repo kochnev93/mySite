@@ -6,6 +6,12 @@ import Image from 'next/image';
 import { HiOutlineDownload } from 'react-icons/Hi';
 import { FaTelegramPlane } from 'react-icons/Fa';
 
+//Icons
+import { IoLogoGithub } from 'react-icons/Io';
+import { IoLogoLinkedin } from 'react-icons/Io';
+import { FaTelegram } from 'react-icons/Fa';
+import { FaPhoneSquareAlt } from 'react-icons/Fa';
+
 const Home: FC = () => {
   return (
     <div className={styles.profile}>
@@ -35,7 +41,23 @@ const Home: FC = () => {
           <h1>Кочнев Антон</h1>
         </div>
         <PrintedText />
-        <div className={styles.social}>social</div>
+        <div className={styles.social}>
+          <a href="https://github.com/kochnev93">
+            <IoLogoGithub />
+          </a>
+
+          <a href="https://www.linkedin.com/in/kochnev-ae">
+            <IoLogoLinkedin />
+          </a>
+
+          <a href="https://t.me/kochnev_ae">
+            <FaTelegram />
+          </a>
+
+          <a href="tel:+79995285154">
+            <FaPhoneSquareAlt />
+          </a>
+        </div>
       </div>
 
       <div className={styles.actions}>

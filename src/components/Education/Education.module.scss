@@ -1,0 +1,26 @@
+@import '@/styles/mixins/list.scss';
+@import '@/styles/mixins/border.scss';
+
+.education_item {
+  @include list-item;
+}
+
+.education_item:before {
+  @include border;
+  bottom: 0;
+  left: 0;
+}
+
+.years {
+  @include list-years;
+}
+
+.specialty {
+  display: inline-block;
+  font-size: 12px;
+  color: grey;
+}
+
+.faculty {
+  @include list-company;
+}

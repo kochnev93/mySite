@@ -6,35 +6,31 @@ import Header from '@/components/Header/Header';
 import About from '@/components/screens/About/About';
 import Resume from '@/components/screens/Resume/Resume';
 import Main from '@/components/screens/Main/Main';
-
+import Footer from '@/components/Footer/Footer';
 import { useRouter } from 'next/router';
 import Background from '@/components/Background/Background';
 import dynamic from 'next/dynamic';
-import { useEffect, useState } from 'react';
-
-// const Header = dynamic(
-//   () => import('@/components/Header/Header'),
-//   { ssr: false }
-// )
-
-// const About = dynamic(
-//   () => import('@/components/screens/About/About'),
-//   { ssr: false }
-
-// )
+import { useEffect, useRef, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
+import Portfolio from '@/components/screens/Portfolio/Portfollio';
 
 export default function HomePage() {
   const { asPath } = useRouter();
   const [activeUrl, setActiveUrl] = useState<string>('/');
   const [innerWidth, setInnerWidth] = useState<number>(1920);
-  console.log('HomePage', asPath);
+
+  const observerRef = useRef<HTMLDivElement | null>(null);
+
+  const { ref, inView, entry } = useInView({
+    /* Optional options */
+    threshold: 0,
+  });
 
   useEffect(() => {
     setActiveUrl(asPath);
   }, [asPath]);
 
   useEffect(() => {
-    console.log('WIDTH', innerWidth);
     window.scroll({
       behavior: 'smooth',
     });
@@ -52,6 +48,24 @@ export default function HomePage() {
     };
   }, []);
 
+  //   useEffect(() => {
+  // // Создаем новый observer (наблюдатель)
+  // let observer = new IntersectionObserver(function (entries) {
+  //   entries.forEach(function (entry) {
+  //       // Выводим в консоль сам элемент
+  //       console.log(entry.target);
+  //       // Выводим в консоль true (если элемент виден) или false (если нет)
+  //       console.log(entry.isIntersecting);
+  //   });
+  // });
+
+  // // Задаем элемент для наблюдения
+  // //let el = document.querySelector('.element');
+
+  // // Прикрепляем его к «наблюдателю»
+  // observer.observe(observerRef.current);
+  //   }, []);
+
   return (
     <>
       <Head>
@@ -68,21 +82,23 @@ export default function HomePage() {
         <main className="main">
           <Home />
           <div style={{ height: '100%', width: '100%', position: 'relative' }}>
-            <Main
-              id={innerWidth < 1200 ? '123' : ''}
-              className={`page ${activeUrl === '/#123' ? 'active' : ''}`}
-            />
             <About
-              id={innerWidth < 1200 ? '456' : ''}
-              className={`page ${activeUrl === '/#456' ? 'active' : ''}`}
+              id={innerWidth < 1200 ? 'about' : ''}
+              className={`page ${activeUrl === '/' ? 'active' : ''}`}
             />
             <Resume
-              id={innerWidth < 1200 ? '789' : ''}
-              className={`page ${activeUrl === '/#789' ? 'active' : ''}`}
+              id={innerWidth < 1200 ? 'resume' : ''}
+              className={`page ${activeUrl === '/#resume' ? 'active' : ''}`}
+            />
+
+            <Portfolio
+              id={innerWidth < 1200 ? 'portfolio' : ''}
+              className={`page ${activeUrl === '/#portfolio' ? 'active' : ''}`}
             />
           </div>
         </main>
       </Contaier>
+      <Footer />
 
       <Background />
     </>

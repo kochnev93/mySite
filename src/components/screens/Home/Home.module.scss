@@ -21,21 +21,6 @@
 }
 
 
-// .profile::after{
-//   content: '';
-//   position: fixed;
-//   top: -15px;
-//   left: -15px;
-//   right: 0;
-//   background-color: #ffc810;
-//   height: 90%;
-//   width: 95%;
-//   border-radius: 5px;
-//   opacity: .3;
-//   z-index: 1;
-
-// }
-
 .slider {
   position: absolute;
   top: 0;
@@ -94,6 +79,23 @@
 .bio {
   text-align: center;
   z-index: 15;
+}
+
+.social{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
+  column-gap: 15px;
+
+  a{
+    font-size: 20px;
+    transition: color .3s ease;
+  }
+
+  a:hover{
+    color: var(--main-color);
+  }
 }
 
 .actions {
