@@ -1,5 +1,6 @@
 import cx from 'classnames';
 import { ReactNode } from 'react';
+import Link from 'next/link';
 
 //Styles
 import styles from './Portfolio.module.scss';
@@ -12,20 +13,18 @@ type Props = {
   subtitle?: string;
 };
 
-
-
 const PortfolioCard: React.FC<Props> = (props) => {
   const style = {
     background: `url('/${props.img}')`,
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
-}
+  };
 
   return (
-  <div className={styles.card} style={style}>
-    <h6>{props.title}</h6>
-    <a href={`/${props.href}`}>Подробнее</a>
-  </div>
+    <li className={styles.card} style={style}>
+      <h6>{props.title}</h6>
+      <Link href={`/${props.href}`}>Подробнее</Link>
+    </li>
   );
 };
 

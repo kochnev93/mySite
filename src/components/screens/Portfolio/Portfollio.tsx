@@ -1,5 +1,7 @@
 import cx from 'classnames';
 import { portfolioData } from '@/data/portfolio/portfolio';
+import { useInView } from 'react-intersection-observer';
+
 
 //Styles
 import styles from './Portfolio.module.scss';
@@ -8,10 +10,6 @@ import styles from './Portfolio.module.scss';
 import PageItem from '@/components/PageItem/PageItem';
 import PortfolioCard from './PortfolioCard';
 
-//Icons
-import { MdWorkOutline } from 'react-icons/Md';
-import { MdSchool } from 'react-icons/Md';
-
 
 type Props = {
   className?: string;
@@ -19,6 +17,10 @@ type Props = {
 };
 
 const Portfolio: React.FC<Props> = (props) => {
+  const { ref, inView, entry } = useInView({
+    threshold: 0,
+  });
+
   return (
     <div
       id={props.id}
@@ -26,16 +28,18 @@ const Portfolio: React.FC<Props> = (props) => {
       data-label={'Works'}
     >
       <PageItem title="Портфолио">
-        <div className={styles.portfolio_block}>
-          {
-            portfolioData.map(item => {
-              return(
-                <PortfolioCard key={item.id} title={item.title} href={item.href} img={item.img} />
-              )
-            })
-          }
-
-        </div>
+        <ul className={cx(styles.portfolio_block, {[styles.view]: inView})} ref={ref}>
+          {portfolioData.map((item) => {
+            return (
+              <PortfolioCard
+                key={item.id}
+                title={item.title}
+                href={item.href}
+                img={item.img}
+              />
+            );
+          })}
+        </ul>
       </PageItem>
     </div>
   );
