@@ -4,6 +4,7 @@ import '@/styles/globals.css';
 import '@/styles/vars.css';
 
 import '@/styles/Pages/pages.scss'
+import '@/styles/Pages/portfolio_page.scss'
 
 
 import type { AppProps } from 'next/app';
