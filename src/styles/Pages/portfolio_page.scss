@@ -10,8 +10,6 @@
   transition: all 0.4s ease 0s;
   overflow: hidden;
 
-
-
   z-index: 1;
 
   background-color: var(--second-color);
@@ -20,25 +18,20 @@
 .portfolio_header {
   padding: 20px;
   color: var(--second-color);
-  background: linear-gradient(
-    60deg,
-    #f79533,
-    rgb(255, 217, 0),
-  );
+  background: linear-gradient(60deg, #f79533, rgb(255, 217, 0));
   animation: animatedgradient 5s ease alternate infinite;
   background-size: 300% 300%;
-
 
   -webkit-box-shadow: 0px 16px 16px 0px rgba(0, 0, 0, 0.22);
   -moz-box-shadow: 0px 16px 16px 0px rgba(0, 0, 0, 0.22);
   box-shadow: 0px 16px 16px 0px rgba(0, 0, 0, 0.22);
 
-  h1{
+  h1 {
     font-weight: 700;
     font-size: 42px;
   }
 
-  a{
+  a {
     background-color: var(--second-color);
     padding: 5px 10px;
     color: white;
@@ -51,28 +44,100 @@
     transition: all 0.5s ease;
     margin-bottom: 10px;
 
-    &:hover{
-        color: var(--main-color);
-        box-shadow: 0px 0px 9px 2px rgba(0, 0, 0, 0.3);
+    &:hover {
+      color: var(--main-color);
+      box-shadow: 0px 0px 9px 2px rgba(0, 0, 0, 0.3);
     }
   }
 }
 
+.portfolio_main {
+  padding: 20px;
+  overflow-y: scroll;
+  height: 96%;
+    max-height: 100%;
+    display: block;
 
-.portfolio_main{
-    padding: 20px;
+    section{
+      height: auto;
+      display: block;
+    }
+
+
+}
+
+
+.portfolio_main::-webkit-scrollbar {
+  width: 5px;
+  background-color: rgba(252, 206, 0, 0.2);
+}
+
+.portfolio_main::-webkit-scrollbar-thumb {
+  background-color: #ffc810;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+}
+
+.portfolio_main::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: transparent;
 }
 
 
 
+.portfolio_description{
+  li {
+    display: flex;
+    &:not(:last-child){
+      margin-bottom: 3px;
+    }
+    span {
+      padding-left: 10px;
+      color: grey;
+    }
+  }
+}
+
+.portfolio_img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  width: 80%;
+  height: 500px;
+  overflow: hidden;
+
+  img{
+    margin: 0 auto;
+    display: block;
+  }
+
+
+}
+
+.slider-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: block;
+  position: relative;
+
+  img{
+    height: 400px;
+    width: 100%;
+    display: block;
+  }
+}
+
 @keyframes animatedgradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
