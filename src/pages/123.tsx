@@ -52,15 +52,34 @@ export default function SmartSchool() {
                   <h4>Цель:</h4>
                   <span>
                     Разработать сайт для центра об­ра­зо­ва­тель­ных услуг
-                    "Smart School"{' '}
+                    "Smart School", с целью привлечения новых клиентов
                   </span>
                 </li>
               </ul>
             </PageItem>
 
+
+            
+            <PageItem title="Этапы разработки">
+              <ol className="portfolio_steps">
+                <li>Сбор информации: назначение, основные цели и целевая аудитория</li>
+                <li>Планирование: создание карты сайта и макета</li>
+                <li>Дизайн: шаблон страниц, обзор и утверждение</li>
+                <li>Создание контента</li>
+                <li>Верстка и разработка</li>
+                <li>Тестирование и деплой</li>
+                <li>Поддержка: отзывы пользователей</li>
+              </ol>
+
+            </PageItem>
+
             <PageItem title="Результат">
-              <div style={{padding: '0 100px'}}>
-              <SimpleSlider />
+              <div className='slider_container'>
+
+                <div className="slider_items">
+                  <SimpleSlider />
+                </div>
+                
               </div>
 
             </PageItem>

@@ -55,17 +55,14 @@
   padding: 20px;
   overflow-y: scroll;
   height: 96%;
-    max-height: 100%;
+  max-height: 100%;
+  display: block;
+
+  section {
+    height: auto;
     display: block;
-
-    section{
-      height: auto;
-      display: block;
-    }
-
-
+  }
 }
-
 
 .portfolio_main::-webkit-scrollbar {
   width: 5px;
@@ -83,12 +80,10 @@
   background-color: transparent;
 }
 
-
-
-.portfolio_description{
+.portfolio_description {
   li {
     display: flex;
-    &:not(:last-child){
+    &:not(:last-child) {
       margin-bottom: 3px;
     }
     span {
@@ -98,7 +93,21 @@
   }
 }
 
-.portfolio_img{
+.portfolio_steps {
+  padding-left: 20px;
+
+  li {
+    &:not(:last-child) {
+      margin-bottom: 3px;
+    }
+    span {
+      padding-left: 10px;
+      color: grey;
+    }
+  }
+}
+
+.portfolio_img {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -108,26 +117,59 @@
   height: 500px;
   overflow: hidden;
 
-  img{
+  img {
     margin: 0 auto;
     display: block;
   }
-
-
 }
 
-.slider-item{
+.slider-item {
   display: flex;
   justify-content: center;
   align-items: center;
   display: block;
   position: relative;
+  padding-top: 56.25%;
 
-  img{
-    height: 400px;
+  img {
+    // height: 400px;
+    // width: 100%;
+    // display: block;
+    // object-fit: contain;
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 100%;
-    display: block;
+    height: auto;
   }
+}
+
+.slider_container {
+  position: relative;
+  padding: 0 20px;
+
+  display: grid;
+  grid-template-columns: minmax(320px, 1fr);
+  grid-template-rows: auto;
+}
+
+.slider_items {
+  flex: 800px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: var(--main-color);
+}
+
+.slick-prev {
+  left: -25px;
+  z-index: 1;
+}
+
+.slick-next {
+  right: -25px;
+  z-index: 1;
 }
 
 @keyframes animatedgradient {
@@ -139,5 +181,60 @@
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    margin: 0;
+    height: 100%;
+  }
+  .portfolio_header {
+    padding: 20px;
+    color: var(--second-color);
+    background: linear-gradient(60deg, #f79533, rgb(255, 217, 0));
+    animation: animatedgradient 5s ease alternate infinite;
+    background-size: 300% 300%;
+
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 10;
+
+    -webkit-box-shadow: 0px 16px 16px 0px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0px 16px 16px 0px rgba(0, 0, 0, 0.22);
+    box-shadow: 0px 16px 16px 0px rgba(0, 0, 0, 0.22);
+
+    h1 {
+      font-size: 36px;
+    }
+  }
+
+  .portfolio_main {
+    padding: 150px 15px 50px 15px;
+    overflow: auto;
+    height: 96%;
+    max-height: 100%;
+    display: block;
+
+    section {
+      height: auto;
+      display: block;
+    }
+  }
+
+  .slick-prev {
+    left: 0 !important;
+    z-index: 1;
+  }
+
+  .slick-next {
+    right: 0 !important;
+    z-index: 1;
+  }
+
+  .slider_container {
+    padding: 0;
   }
 }
