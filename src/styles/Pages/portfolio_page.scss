@@ -1,11 +1,11 @@
 .wrapper {
-  margin: 4vh 4vw;
+  margin: 2vh 2vw;
   position: relative;
   top: 0;
   left: 0;
   width: 100%;
   height: 92vh;
-  max-width: 1268px;
+  max-width: 1400px;
   border-radius: 5px;
   transition: all 0.4s ease 0s;
   overflow: hidden;
@@ -13,10 +13,15 @@
   z-index: 1;
 
   background-color: var(--second-color);
+  font-size: calc(14px + 2 * (100vw - 320px) / 880);
 }
 
 .portfolio_header {
-  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 20px;
   color: var(--second-color);
   background: linear-gradient(60deg, #f79533, rgb(255, 217, 0));
   animation: animatedgradient 5s ease alternate infinite;
@@ -29,6 +34,7 @@
   h1 {
     font-weight: 700;
     font-size: 42px;
+    margin-bottom: 0px;
   }
 
   a {
@@ -36,17 +42,32 @@
     padding: 5px 10px;
     color: white;
     border-radius: 5px;
+    color: grey;
 
     display: inline-flex;
     justify-content: center;
     align-items: center;
 
     transition: all 0.5s ease;
-    margin-bottom: 10px;
 
     &:hover {
       color: var(--main-color);
       box-shadow: 0px 0px 9px 2px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .portfolio_header {
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .portfolio_header {
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
     }
   }
 }
@@ -61,6 +82,24 @@
   section {
     height: auto;
     display: block;
+  }
+}
+
+.portfolio_main {
+  table {
+    th {
+      text-align: left;
+    }
+
+    td,
+    th {
+      padding: 5px;
+    }
+
+    td {
+      color: grey;
+      padding-left: 5px;
+    }
   }
 }
 
@@ -129,13 +168,11 @@
   align-items: center;
   display: block;
   position: relative;
-  padding-top: 56.25%;
+  padding-top: 50%;
+  border-radius: 5px;
+  overflow: hidden;
 
   img {
-    // height: 400px;
-    // width: 100%;
-    // display: block;
-    // object-fit: contain;
     position: absolute;
     left: 0;
     top: 0;
@@ -212,7 +249,7 @@
   }
 
   .portfolio_main {
-    padding: 150px 15px 50px 15px;
+    padding: 120px 15px 50px 15px;
     overflow: auto;
     height: 96%;
     max-height: 100%;

@@ -31,38 +31,43 @@ export default function SmartSchool() {
 
         <main className="portfolio_main">
           <section>
-            <PageItem title="Общая информация">
-              <ul className="portfolio_description">
-                <li>
-                  <h4>Название:</h4>
-                  <span>Smart School</span>
-                </li>
-
-                <li>
-                  <h4>Заказчик:</h4>
-                  <span>ООО "Кар-финанс" (2722133934)</span>
-                </li>
-
-                <li>
-                  <h4>Стек:</h4>
-                  <span>Wordpress, HTML, SCSS, JS</span>
-                </li>
-
-                <li>
-                  <h4>Цель:</h4>
-                  <span>
-                    Разработать сайт для центра об­ра­зо­ва­тель­ных услуг
-                    "Smart School", с целью привлечения новых клиентов
-                  </span>
-                </li>
-              </ul>
+            <PageItem title="Результат">
+              <div className="slider_container">
+                <div className="slider_items">
+                  <SimpleSlider />
+                </div>
+              </div>
             </PageItem>
 
+            <PageItem title="Общая информация">
+              <table>
+                <tr>
+                  <th>Название:</th>
+                  <td>Smart School</td>
+                </tr>
+                <tr>
+                  <th>Заказчик:</th>
+                  <td>ООО "Кар-финанс"</td>
+                </tr>
+                <tr>
+                  <th>Стек:</th>
+                  <td>Wordpress (+ carbon fields), PHP, HTML, SCSS, JS</td>
+                </tr>
+                <tr>
+                  <th>Цель:</th>
+                  <td>
+                    Разработать сайт для центра об­ра­зо­ва­тель­ных услуг
+                    "Smart School", с целью привлечения новых клиентов
+                  </td>
+                </tr>
+              </table>
+            </PageItem>
 
-            
             <PageItem title="Этапы разработки">
               <ol className="portfolio_steps">
-                <li>Сбор информации: назначение, основные цели и целевая аудитория</li>
+                <li>
+                  Сбор информации: назначение, основные цели и целевая аудитория
+                </li>
                 <li>Планирование: создание карты сайта и макета</li>
                 <li>Дизайн: шаблон страниц, обзор и утверждение</li>
                 <li>Создание контента</li>
@@ -70,20 +75,7 @@ export default function SmartSchool() {
                 <li>Тестирование и деплой</li>
                 <li>Поддержка: отзывы пользователей</li>
               </ol>
-
             </PageItem>
-
-            <PageItem title="Результат">
-              <div className='slider_container'>
-
-                <div className="slider_items">
-                  <SimpleSlider />
-                </div>
-                
-              </div>
-
-            </PageItem>
-
 
             <PageItem title="Общая информация">
               <ul className="portfolio_description">

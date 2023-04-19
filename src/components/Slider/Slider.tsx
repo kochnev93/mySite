@@ -12,15 +12,28 @@ export default function SimpleSlider() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoPlay: true
+    autoplay: true,
+    autoplaySpeed: 5000,
   };
   return (
     <Slider {...settings}>
       <div className="slider-item">
-        <img src="/Portfolio/smart_main.webp" alt="Smart School" />
+        <img src="/Portfolio/smart1.webp" alt="Smart School" />
       </div>
       <div className="slider-item">
-        <img src="/Portfolio/smart_main.webp" alt="Smart School" />
+        <img src="/Portfolio/smart2.webp" alt="Smart School" />
+      </div>
+      <div className="slider-item">
+        <img src="/Portfolio/smart3.webp" alt="Smart School" />
+      </div>
+      <div className="slider-item">
+        <img src="/Portfolio/smart4.webp" alt="Smart School" />
+      </div>
+      <div className="slider-item">
+        <img src="/Portfolio/smart5.webp" alt="Smart School" />
+      </div>
+      <div className="slider-item">
+        <img src="/Portfolio/smart6.webp" alt="Smart School" />
       </div>
     </Slider>
   );
