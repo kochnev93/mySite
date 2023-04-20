@@ -57,6 +57,48 @@
   }
 }
 
+.photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  column-gap: 10px;
+  row-gap: 10px;
+  position: relative;
+
+  img {
+    position: relative;
+    width: 100%;
+    transition: opacity 0.3s ease;
+    &:hover {
+      cursor: zoom-in;
+
+    }
+
+  }
+}
+
+.photos img:after{
+  content: '123 ';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--main-color);
+  opacity: 0.5;
+  color: black;
+  z-index: 100;
+  font-size: 32px;
+}
+
+
+@media (max-width: 700px) {
+  .photos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 400px) {
   .portfolio_header {
     flex-direction: column-reverse;

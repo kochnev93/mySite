@@ -8,6 +8,9 @@ import PageItem from '@/components/PageItem/PageItem';
 import Image from 'next/image';
 import SimpleSlider from '@/components/Slider/Slider';
 
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
+
 export default function SmartSchool() {
   return (
     <>
@@ -31,13 +34,15 @@ export default function SmartSchool() {
 
         <main className="portfolio_main">
           <section>
-            <PageItem title="Результат">
+            {/* <PageItem title="Результат">
               <div className="slider_container">
                 <div className="slider_items">
                   <SimpleSlider />
                 </div>
               </div>
-            </PageItem>
+            </PageItem> */}
+
+
 
             <PageItem title="Общая информация">
               <table>
@@ -77,31 +82,30 @@ export default function SmartSchool() {
               </ol>
             </PageItem>
 
-            <PageItem title="Общая информация">
-              <ul className="portfolio_description">
-                <li>
-                  <h4>Название:</h4>
-                  <span>Smart School</span>
-                </li>
+            <PageItem title="Результат">
+              <div className="photos">
+                <PhotoProvider>
+                  <PhotoView src="/Portfolio/smart1.webp">
+                    <img className='img_zoom' src="/Portfolio/smart1.webp" alt="" />
+                  </PhotoView>
+                  <PhotoView src="/Portfolio/smart2.webp">
+                    <img className='img_zoom' src="/Portfolio/smart2.webp" alt="" />
+                  </PhotoView>
+                  <PhotoView src="/Portfolio/smart3.webp">
+                    <img className='img_zoom' src="/Portfolio/smart3.webp" alt="" />
+                  </PhotoView>
+                  <PhotoView src="/Portfolio/smart4.webp">
+                    <img className='img_zoom' src="/Portfolio/smart4.webp" alt="" />
+                  </PhotoView>
+                  <PhotoView src="/Portfolio/smart5.webp">
+                    <img className='img_zoom' src="/Portfolio/smart5.webp" alt="" />
+                  </PhotoView>
 
-                <li>
-                  <h4>Заказчик:</h4>
-                  <span>ООО "Кар-финанс" (2722133934)</span>
-                </li>
-
-                <li>
-                  <h4>Стек:</h4>
-                  <span>Wordpress, HTML, SCSS, JS</span>
-                </li>
-
-                <li>
-                  <h4>Цель:</h4>
-                  <span>
-                    Разработать сайт для центра об­ра­зо­ва­тель­ных услуг
-                    "Smart School"{' '}
-                  </span>
-                </li>
-              </ul>
+                  <PhotoView src="/Portfolio/smart6.webp">
+                    <img className='img_zoom' src="/Portfolio/smart6.webp" alt="" />
+                  </PhotoView>
+                </PhotoProvider>
+              </div>
             </PageItem>
           </section>
         </main>
