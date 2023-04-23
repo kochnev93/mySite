@@ -42,29 +42,29 @@ export default function SmartSchool() {
               </div>
             </PageItem> */}
 
-
-
             <PageItem title="Общая информация">
               <table>
-                <tr>
-                  <th>Название:</th>
-                  <td>Smart School</td>
-                </tr>
-                <tr>
-                  <th>Заказчик:</th>
-                  <td>ООО "Кар-финанс"</td>
-                </tr>
-                <tr>
-                  <th>Стек:</th>
-                  <td>Wordpress (+ carbon fields), PHP, HTML, SCSS, JS</td>
-                </tr>
-                <tr>
-                  <th>Цель:</th>
-                  <td>
-                    Разработать сайт для центра об­ра­зо­ва­тель­ных услуг
-                    "Smart School", с целью привлечения новых клиентов
-                  </td>
-                </tr>
+                <tbody>
+                  <tr>
+                    <th>Название:</th>
+                    <td>Smart School</td>
+                  </tr>
+                  <tr>
+                    <th>Заказчик:</th>
+                    <td>ООО "Кар-финанс"</td>
+                  </tr>
+                  <tr>
+                    <th>Стек:</th>
+                    <td>Wordpress (+ carbon fields), PHP, HTML, SCSS, JS</td>
+                  </tr>
+                  <tr>
+                    <th>Цель:</th>
+                    <td>
+                      Разработать сайт для центра об­ра­зо­ва­тель­ных услуг
+                      "Smart School", с целью привлечения новых клиентов
+                    </td>
+                  </tr>
+                </tbody>
               </table>
             </PageItem>
 
@@ -86,23 +86,47 @@ export default function SmartSchool() {
               <div className="photos">
                 <PhotoProvider>
                   <PhotoView src="/Portfolio/smart1.webp">
-                    <img className='img_zoom' src="/Portfolio/smart1.webp" alt="" />
+                    <img
+                      className="img_zoom"
+                      src="/Portfolio/smart1.webp"
+                      alt=""
+                    />
                   </PhotoView>
                   <PhotoView src="/Portfolio/smart2.webp">
-                    <img className='img_zoom' src="/Portfolio/smart2.webp" alt="" />
+                    <img
+                      className="img_zoom"
+                      src="/Portfolio/smart2.webp"
+                      alt=""
+                    />
                   </PhotoView>
                   <PhotoView src="/Portfolio/smart3.webp">
-                    <img className='img_zoom' src="/Portfolio/smart3.webp" alt="" />
+                    <img
+                      className="img_zoom"
+                      src="/Portfolio/smart3.webp"
+                      alt=""
+                    />
                   </PhotoView>
                   <PhotoView src="/Portfolio/smart4.webp">
-                    <img className='img_zoom' src="/Portfolio/smart4.webp" alt="" />
+                    <img
+                      className="img_zoom"
+                      src="/Portfolio/smart4.webp"
+                      alt=""
+                    />
                   </PhotoView>
                   <PhotoView src="/Portfolio/smart5.webp">
-                    <img className='img_zoom' src="/Portfolio/smart5.webp" alt="" />
+                    <img
+                      className="img_zoom"
+                      src="/Portfolio/smart5.webp"
+                      alt=""
+                    />
                   </PhotoView>
 
                   <PhotoView src="/Portfolio/smart6.webp">
-                    <img className='img_zoom' src="/Portfolio/smart6.webp" alt="" />
+                    <img
+                      className="img_zoom"
+                      src="/Portfolio/smart6.webp"
+                      alt=""
+                    />
                   </PhotoView>
                 </PhotoProvider>
               </div>

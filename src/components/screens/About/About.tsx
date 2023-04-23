@@ -29,9 +29,9 @@ const About: React.FC<Props> = (props) => {
     </PageItem>
 
 
-    <PageItem title='Ключевые навыки' className={cx({[styles.view]: inView})}>
+    {/* <PageItem title='Ключевые навыки' className={cx({[styles.view]: inView})}>
       <Skills/>
-    </PageItem>
+    </PageItem> */}
 
   </div>
 )};

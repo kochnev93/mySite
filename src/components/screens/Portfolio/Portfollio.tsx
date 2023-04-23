@@ -24,7 +24,7 @@ const Portfolio: React.FC<Props> = (props) => {
   return (
     <div
       id={props.id}
-      className={cx(styles.portfolio, props.className)}
+      className={cx(styles.portfolio, props.className, 'scrollto')}
       data-label={'Works'}
     >
       <PageItem title="Портфолио">
