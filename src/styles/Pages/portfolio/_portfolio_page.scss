@@ -1,0 +1,15 @@
+.portfolio_section{
+    background-color: var(--second-color);
+    padding: 20px;
+    border-radius: 5px;
+    margin: 4vh;
+    z-index: 1;
+    position: relative;
+
+}
+
+.portfolio_containner{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}

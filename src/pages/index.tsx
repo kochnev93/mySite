@@ -11,6 +11,7 @@ import Background from '@/components/Background/Background';
 import { useEffect, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import Portfolio from '@/components/screens/Portfolio/Portfollio';
+import Layout from '@/components/Layouts/LayoutMain/Layout';
 
 
 export default function HomePage() {
@@ -18,10 +19,6 @@ export default function HomePage() {
 
   const { asPath } = useRouter();
   const [activeUrl, setActiveUrl] = useState<string>('/');
-
-
-
-
 
   const { ref, inView, entry } = useInView({
     threshold: 0,
@@ -42,29 +39,34 @@ export default function HomePage() {
 
       <Cursor />
 
-      <Contaier>
-        <Header />
-        <main className="main">
-          <Home />
+      <Layout>
+        <div className="home_wrapper">
+          <div className="home_container">
+            <Header />
+            <main className="main">
+              <Home />
 
-          <div style={{ height: '100%', width: '100%', position: 'relative' }}>
+              <div
+                style={{ height: '100%', width: '100%', position: 'relative' }}
+              >
+                <About
+                  className={`page ${activeUrl === '/' ? 'active' : ''}`}
+                />
 
-            <About
-              className={`page ${activeUrl === '/' ? 'active' : ''}`}
-            />
+                <Resume
+                  className={`page ${activeUrl === '/#resume' ? 'active' : ''}`}
+                />
 
-            <Resume
-              className={`page ${activeUrl === '/#resume' ? 'active' : ''}`}
-            />
-
-            <Portfolio
-              className={`page ${activeUrl === '/#portfolio' ? 'active' : ''}`}
-            />
-
+                <Portfolio
+                  className={`page ${
+                    activeUrl === '/#portfolio' ? 'active' : ''
+                  }`}
+                />
+              </div>
+            </main>
           </div>
-        </main>
-      </Contaier>
-      <Footer />
+        </div>
+      </Layout>
 
       <Background />
     </>

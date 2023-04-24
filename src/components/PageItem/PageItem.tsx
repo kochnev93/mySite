@@ -14,13 +14,7 @@ const PageItem: FC<Props> = (props) => {
     >
       <h2 className="page_title">{props.title}</h2>
 
-      <div
-        className={`page_content ${
-          props.className ? props.className : ''
-        }`.trim()}
-      >
-        {props.children}
-      </div>
+      <div className="page_content">{props.children}</div>
     </div>
   );
 };

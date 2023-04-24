@@ -1,11 +1,7 @@
 import Preloader from '@/components/Preloader/Preloader';
-import '@/styles/globals.css';
-//import '@/styles/globals_pages.css';
-import '@/styles/vars.css';
 
-import '@/styles/Pages/pages.scss'
-import '@/styles/Pages/portfolio_page.scss'
-
+import '@/styles/global/index.scss';
+import '@/styles/Pages/index.scss';
 
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
@@ -21,7 +17,10 @@ function Loading() {
     };
 
     const handleComplete = () => {
-      let timeout = setTimeout(() => {setLoading(false)}, 500);
+      let timeout = setTimeout(() => {
+        setLoading(false);
+      }, 300);
+
       //return clearTimeout(timeout)
     };
 
@@ -34,13 +33,13 @@ function Loading() {
     };
   }, [router.events]);
 
-  return loading ? <Preloader/> : <></>;
+  return loading ? <Preloader /> : <></>;
 }
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-       <Loading /> 
+      <Loading />
       <Component {...pageProps} />
     </>
   );
