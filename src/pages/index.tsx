@@ -12,14 +12,16 @@ import { useEffect, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import Portfolio from '@/components/screens/Portfolio/Portfollio';
 
+
 export default function HomePage() {
+  const router = useRouter();
+
   const { asPath } = useRouter();
   const [activeUrl, setActiveUrl] = useState<string>('/');
-  const [innerWidth, setInnerWidth] = useState<number>(1920);
 
-  const observerRef = useRef<HTMLDivElement | null>(null);
 
-  const ref1 = useRef(null)
+
+
 
   const { ref, inView, entry } = useInView({
     threshold: 0,
@@ -28,28 +30,6 @@ export default function HomePage() {
   useEffect(() => {
     setActiveUrl(asPath);
   }, [asPath]);
-
-  useEffect(() => {
-
-
-    window.addEventListener('resize', displayWindowSize);
-
-    function displayWindowSize() {
-      setInnerWidth(window.innerWidth);
-    }
-
-    displayWindowSize();
-
-    return () => {
-      window.removeEventListener('resize', displayWindowSize);
-    };
-  }, []);
-
-
-  const buttonHandler = (ref) => {
-    ref.current.scrollIntoView();
-  };
-
 
   return (
     <>
@@ -67,27 +47,20 @@ export default function HomePage() {
         <main className="main">
           <Home />
 
-          <button onClick={() => buttonHandler(ref1)}>Go to 1</button>
           <div style={{ height: '100%', width: '100%', position: 'relative' }}>
+
             <About
-              id={innerWidth < 1200 ? 'about' : ''}
               className={`page ${activeUrl === '/' ? 'active' : ''}`}
             />
+
             <Resume
-              id={innerWidth < 1200 ? 'resume1' : ''}
               className={`page ${activeUrl === '/#resume' ? 'active' : ''}`}
             />
 
             <Portfolio
-           
-           
-              id={innerWidth < 1200 ? 'portfolio' : ''}
               className={`page ${activeUrl === '/#portfolio' ? 'active' : ''}`}
             />
 
-            <div ref={ref1}>
-              123123
-            </div>
           </div>
         </main>
       </Contaier>

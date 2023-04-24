@@ -22,11 +22,17 @@
 .title {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
   h2 {
     margin-right: 10px;
     color: var(--main-color);
   }
+}
+
+.subtitle{
+  padding: 10px 0;
+  font-size: 14px;
+  color: grey;
+  margin-bottom: 20px;
 }
 
 .emodji {
@@ -61,6 +67,12 @@
       }
     }
   }
+
+  .subtitle{
+    padding: 0px 10px;
+    text-align: center;
+  }
+  
 
   .emodji {
     display: none;

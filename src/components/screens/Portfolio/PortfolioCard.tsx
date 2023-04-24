@@ -23,7 +23,7 @@ const PortfolioCard: React.FC<Props> = (props) => {
   return (
     <li className={styles.card} style={style}>
       <h6>{props.title}</h6>
-      <Link href={`/${props.href}`}>Подробнее</Link>
+      <Link href={props.href}>Подробнее</Link>
     </li>
   );
 };

@@ -4,21 +4,24 @@ export const menuData = [
     title: 'Обо мне',
     href: '',
     activeClass: '',
-    icon: 'FaUserAlt'
+    icon: 'FaUserAlt',
+    dataAttr: 'About'
   },
   {
     id: 2,
     title: 'Резюме',
     href: '#resume',
     activeClass: '',
-    icon: 'CgFileDocument'
+    icon: 'CgFileDocument',
+    dataAttr: 'Resume'
   },
   {
     id: 3,
     title: 'Кейсы',
     href: '#portfolio',
     activeClass: '',
-    icon: 'BsPersonWorkspace'
+    icon: 'BsPersonWorkspace',
+    dataAttr: 'Works'
   },
 ];
 
@@ -27,5 +30,6 @@ export interface IMenu {
     title: string,
     href: string,
     activeClass: string,
-    icon: string
+    icon: string,
+    dataAttr: string
 }

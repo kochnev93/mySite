@@ -31,22 +31,23 @@ const getIcon = (icon: string) => {
   }
 };
 
-const buttonHandler = (href) => {
-  console.log(href)
-  const scrollTarget = document.querySelector('#resume1');
-  scrollTarget.scrollIntoView({
-    behavior: 'smooth'
+const buttonHandler = (attr: string) => {
+  const scrollTarget = document.querySelector('[data-label="'+attr+'"]');
+  const innerWidth = window.innerWidth;
+
+
+  if(window.innerWidth <= 1200 && scrollTarget){
+  const topOffset = innerWidth < 651 ? 150 : 0;
+  const elementPosition = scrollTarget.getBoundingClientRect().top;
+  const offsetPosition = elementPosition - topOffset;
+
+    window.scrollBy({
+    top: offsetPosition,
+    behavior: 'smooth',
   });
+  
+  }
 
-
-  // const topOffset = 150;
-  // const elementPosition = scrollTarget.getBoundingClientRect().top;
-  // const offsetPosition = elementPosition - topOffset;
-
-  // window.scrollBy({
-  //   top: offsetPosition,
-  //   behavior: 'smooth',
-  // });
 
 };
 
@@ -60,7 +61,7 @@ const Menu: FC<Props> = (props) => {
               <Link
                 href={item.href}
                 onClick={() => {
-                  buttonHandler(item.href);
+                  buttonHandler(item.dataAttr);
                 }}
               >
                 {getIcon(item.icon)}
