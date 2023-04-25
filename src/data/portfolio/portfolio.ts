@@ -8,7 +8,7 @@ export const portfolioData = [
   {
     id: 2,
     title: 'Salang',
-    href: '/portfolio/smart-school',
+    href: '/portfolio/salang',
     img: 'salang.png',
   },
   {
@@ -20,7 +20,7 @@ export const portfolioData = [
   {
     id: 4,
     title: 'Salang',
-    href: '/portfolio/smart-school',
+    href: '/portfolio/salang',
     img: 'salang.png',
   },
 ];
