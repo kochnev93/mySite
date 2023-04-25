@@ -6,8 +6,8 @@ import PageItem from '@/components/PageItem/PageItem';
 import Skills from '@/components/Skills/Skills';
 
 //Icons
-import { MdWorkOutline } from 'react-icons/Md';
-import { MdSchool } from 'react-icons/Md';
+import { MdWorkOutline } from 'react-icons/md';
+import { MdSchool } from 'react-icons/md';
 
 type Props = {
   className?: string;

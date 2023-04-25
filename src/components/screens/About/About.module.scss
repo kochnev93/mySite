@@ -1,17 +1,25 @@
-.view{
-    // transform: translate(0, 0);
-    // transform: rotate(0deg);
-    animation: show 1.3s ease-in-out;
+.about {
+
+  p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-size: calc(14px + 2 * (100vw - 320px) / 880);
+    opacity: 0.9;
+    letter-spacing: 1px;
+  }
 }
 
+.view {
+  animation: show 1.3s ease-in-out;
+}
 
-  @keyframes show {
-    0% {
-        opacity: 0.3;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+@keyframes show {
+  0% {
+    opacity: 0.3;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

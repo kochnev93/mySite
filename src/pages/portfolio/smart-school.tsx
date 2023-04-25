@@ -2,12 +2,10 @@ import Head from 'next/head';
 import Cursor from '@/components/Cursor/Cursor';
 import Background from '@/components/Background/Background';
 import PageItem from '@/components/PageItem/PageItem';
-import Image from 'next/image';
-
-import { PhotoProvider, PhotoView } from 'react-photo-view';
-import 'react-photo-view/dist/react-photo-view.css';
-
+import Description from '@/components/_elements/Portfolio/Description/Description';
 import Layout_P from '@/components/Layouts/LayoutPortfolio/Layout_P';
+import Steps from '@/components/_elements/Portfolio/SteopsOfDev/Steps';
+import PhotoViewer from '@/components/_elements/PhotoViewer/PhotoViewer';
 
 export default function SmartSchool() {
   return (
@@ -24,71 +22,44 @@ export default function SmartSchool() {
 
       <Cursor />
 
-      <Layout_P title='Smart School'>
+      <Layout_P title="Smart School">
         <PageItem title="Общая информация">
-          <table>
-            <tbody>
-              <tr>
-                <th>Название:</th>
-                <td>Smart School</td>
-              </tr>
-              <tr>
-                <th>Заказчик:</th>
-                <td>ООО "Кар-финанс"</td>
-              </tr>
-              <tr>
-                <th>Стек:</th>
-                <td>Wordpress (+ carbon fields), PHP, HTML, SCSS, JS</td>
-              </tr>
-              <tr>
-                <th>Цель:</th>
-                <td>
-                  Разработать сайт для центра об­ра­зо­ва­тель­ных услуг "Smart
-                  School", с целью привлечения новых клиентов
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <Description
+            title="Smart School"
+            client='ООО "Кар-финанс"'
+            stack="Wordpress (+ carbon fields), PHP, HTML, SCSS, JS"
+            target='Разработать сайт для центра об­ра­зо­ва­тель­ных услуг "Smart
+                  School", с целью привлечения новых клиентов'
+          />
         </PageItem>
 
         <PageItem title="Этапы разработки">
-          <ol className="portfolio_steps">
-            <li>
-              Сбор информации: назначение, основные цели и целевая аудитория
-            </li>
-            <li>Планирование: создание карты сайта и макета</li>
-            <li>Дизайн: шаблон страниц, обзор и утверждение</li>
-            <li>Создание контента</li>
-            <li>Верстка и разработка</li>
-            <li>Тестирование и деплой</li>
-            <li>Поддержка: отзывы пользователей</li>
-          </ol>
+          <Steps
+            items={[
+              'Сбор информации: назначение, основные цели и целевая аудитория',
+              'Планирование: создание карты сайта и макета',
+              'Дизайн: шаблон страниц, обзор и утверждение',
+              'Создание контента',
+              'Верстка и разработка',
+              'Тестирование и публикация сайта на хостинг',
+              'Поддержка: отзывы пользователей',
+            ]}
+          />
         </PageItem>
 
         <PageItem title="Результат">
-          <div className="photos">
-            <PhotoProvider>
-              <PhotoView src="/Portfolio/smart1.webp">
-                <img className="img_zoom" src="/Portfolio/smart1.webp" alt="" />
-              </PhotoView>
-              <PhotoView src="/Portfolio/smart2.webp">
-                <img className="img_zoom" src="/Portfolio/smart2.webp" alt="" />
-              </PhotoView>
-              <PhotoView src="/Portfolio/smart3.webp">
-                <img className="img_zoom" src="/Portfolio/smart3.webp" alt="" />
-              </PhotoView>
-              <PhotoView src="/Portfolio/smart4.webp">
-                <img className="img_zoom" src="/Portfolio/smart4.webp" alt="" />
-              </PhotoView>
-              <PhotoView src="/Portfolio/smart5.webp">
-                <img className="img_zoom" src="/Portfolio/smart5.webp" alt="" />
-              </PhotoView>
-
-              <PhotoView src="/Portfolio/smart6.webp">
-                <img className="img_zoom" src="/Portfolio/smart6.webp" alt="" />
-              </PhotoView>
-            </PhotoProvider>
-          </div>
+          <PhotoViewer
+            className="photos"
+            hoverEffects={true}
+            images={[
+              { src: '/Portfolio/SmartSchool/smart1.webp', alt: 'Smart School 1' },
+              { src: '/Portfolio/SmartSchool/smart2.webp', alt: 'Smart School 2' },
+              { src: '/Portfolio/SmartSchool/smart3.webp', alt: 'Smart School 3' },
+              { src: '/Portfolio/SmartSchool/smart4.webp', alt: 'Smart School 4' },
+              { src: '/Portfolio/SmartSchool/smart5.webp', alt: 'Smart School 5' },
+              { src: '/Portfolio/SmartSchool/smart6.webp', alt: 'Smart School 6' },
+            ]}
+          />
         </PageItem>
       </Layout_P>
 

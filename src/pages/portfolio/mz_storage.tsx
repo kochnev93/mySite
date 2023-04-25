@@ -2,16 +2,16 @@ import Head from 'next/head';
 import Cursor from '@/components/Cursor/Cursor';
 import Background from '@/components/Background/Background';
 import PageItem from '@/components/PageItem/PageItem';
-import Layout_P from '@/components/Layouts/LayoutPortfolio/Layout_P';
 import Description from '@/components/_elements/Portfolio/Description/Description';
-import PhotoViewer from '@/components/_elements/PhotoViewer/PhotoViewer';
+import Layout_P from '@/components/Layouts/LayoutPortfolio/Layout_P';
 import Steps from '@/components/_elements/Portfolio/SteopsOfDev/Steps';
+import PhotoViewer from '@/components/_elements/PhotoViewer/PhotoViewer';
 
-export default function Salang() {
+export default function SmartSchool() {
   return (
     <>
       <Head>
-        <title>Портфолио - Salang</title>
+        <title>Портфолио - Storage</title>
         <meta
           name="description"
           content="Привет, меня зовут Антон, это страница обо мне"
@@ -22,13 +22,13 @@ export default function Salang() {
 
       <Cursor />
 
-      <Layout_P title="Salang">
+      <Layout_P title="Storage">
         <PageItem title="Общая информация">
           <Description
-            title="Salang"
-            client='ООО "Кар-финанс"'
-            stack="Wordpress (+ woocommerce), PHP, HTML, SCSS, JS"
-            target="Разработать интернет-магазин для реализации продукции компании"
+            title="Storage"
+            client='ООО "Вита"'
+            stack="React (redux-toolkit, react-hooks), Express JS, MySQL"
+            target='Разработать модуль для учета оборудования'
           />
         </PageItem>
 
@@ -40,9 +40,8 @@ export default function Salang() {
               'Дизайн: шаблон страниц, обзор и утверждение',
               'Создание контента',
               'Верстка и разработка',
-              'Подключение плагина для электронной коммерции Woocommerce',
-              'Подключение платежного шлюза для оплаты',
               'Тестирование и публикация сайта на хостинг',
+              'Поддержка: отзывы пользователей',
             ]}
           />
         </PageItem>
@@ -52,13 +51,15 @@ export default function Salang() {
             className="photos"
             hoverEffects={true}
             images={[
-              { src: '/Portfolio/Salang/salang0.webp', alt: 'Salang 1' },
-              { src: '/Portfolio/Salang/salang1.webp', alt: 'Salang 2' },
-              { src: '/Portfolio/Salang/salang2.webp', alt: 'Salang 3' },
-              { src: '/Portfolio/Salang/salang3.webp', alt: 'Salang 4' },
-              { src: '/Portfolio/Salang/salang4.webp', alt: 'Salang 5' },
-              { src: '/Portfolio/Salang/salang5.webp', alt: 'Salang 6' },
-              { src: '/Portfolio/Salang/salang6.webp', alt: 'Salang 6' },
+              { src: '/Portfolio/Storage/storage1.webp', alt: 'Storage 1' },
+              { src: '/Portfolio/Storage/storage2.webp', alt: 'Storage 2' },
+              { src: '/Portfolio/Storage/storage3.webp', alt: 'Storage 3' },
+              { src: '/Portfolio/Storage/storage4.webp', alt: 'Storage 4' },
+              { src: '/Portfolio/Storage/storage5.webp', alt: 'Storage 5' },
+              { src: '/Portfolio/Storage/storage6.webp', alt: 'Storage 6' },
+              { src: '/Portfolio/Storage/storage7.webp', alt: 'Storage 7' },
+              { src: '/Portfolio/Storage/storage8.webp', alt: 'Storage 8' },
+              { src: '/Portfolio/Storage/storage9.webp', alt: 'Storage 9' },
             ]}
           />
         </PageItem>

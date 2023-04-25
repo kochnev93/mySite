@@ -1,32 +1,10 @@
 import Head from 'next/head';
-import Home from '@/components/screens/Home/Home';
 import Cursor from '@/components/Cursor/Cursor';
-import Contaier from '@/components/screens/Container/Container';
-import Header from '@/components/Header/Header';
-import About from '@/components/screens/About/About';
-import Resume from '@/components/screens/Resume/Resume';
-import Footer from '@/components/Footer/Footer';
-import { useRouter } from 'next/router';
 import Background from '@/components/Background/Background';
-import { useEffect, useRef, useState } from 'react';
-import { useInView } from 'react-intersection-observer';
-import Portfolio from '@/components/screens/Portfolio/Portfollio';
 import Layout from '@/components/Layouts/LayoutMain/Layout';
-
+import Main from '@/components/screens/Main/Main';
 
 export default function HomePage() {
-  const router = useRouter();
-
-  const { asPath } = useRouter();
-  const [activeUrl, setActiveUrl] = useState<string>('/');
-
-  const { ref, inView, entry } = useInView({
-    threshold: 0,
-  });
-
-  useEffect(() => {
-    setActiveUrl(asPath);
-  }, [asPath]);
 
   return (
     <>
@@ -40,32 +18,7 @@ export default function HomePage() {
       <Cursor />
 
       <Layout>
-        <div className="home_wrapper">
-          <div className="home_container">
-            <Header />
-            <main className="main">
-              <Home />
-
-              <div
-                style={{ height: '100%', width: '100%', position: 'relative' }}
-              >
-                <About
-                  className={`page ${activeUrl === '/' ? 'active' : ''}`}
-                />
-
-                <Resume
-                  className={`page ${activeUrl === '/#resume' ? 'active' : ''}`}
-                />
-
-                <Portfolio
-                  className={`page ${
-                    activeUrl === '/#portfolio' ? 'active' : ''
-                  }`}
-                />
-              </div>
-            </main>
-          </div>
-        </div>
+        <Main />
       </Layout>
 
       <Background />

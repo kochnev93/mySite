@@ -3,25 +3,19 @@ export const portfolioData = [
     id: 1,
     title: 'Smart School',
     href: '/portfolio/smart-school',
-    img: 'smart_school.png',
+    img: 'Portfolio/SmartSchool/smart_main.webp',
   },
   {
     id: 2,
     title: 'Salang',
     href: '/portfolio/salang',
-    img: 'salang.png',
+    img: 'Portfolio/Salang/salang_main.webp',
   },
   {
     id: 3,
-    title: 'Smart School',
-    href: '/portfolio/smart-school',
-    img: 'smart_school.png',
-  },
-  {
-    id: 4,
-    title: 'Salang',
-    href: '/portfolio/salang',
-    img: 'salang.png',
+    title: 'Storage',
+    href: '/portfolio/mz_storage',
+    img: 'Portfolio/Storage/storage6.webp',
   },
 ];
 

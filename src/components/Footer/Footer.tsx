@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { AiFillHeart } from 'react-icons/Ai';
+import { AiFillHeart } from 'react-icons/ai';
 
 import styles from './Footer.module.scss';
 
