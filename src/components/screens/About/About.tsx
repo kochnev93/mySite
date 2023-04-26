@@ -10,6 +10,7 @@ import PageItem from '@/components/PageItem/PageItem';
 type Props = {
   className?: string;
   id?: string;
+  ref?: React.RefObject<HTMLDivElement>
 };
 
 const getAge = () => {
@@ -26,18 +27,15 @@ const getAge = () => {
 
 
 const About: React.FC<Props> = (props) => {
-  const { ref, inView, entry } = useInView({
-    threshold: 0,
-  });
 
   return (
     <div
       id={props.id}
-      className={cx(styles.about, props.className, { ['view']: inView })}
+      className={cx(styles.about, props.className)}
       data-label={'About'}
-      ref={ref}
+      ref={props.ref}
     >
-      <PageItem title="Обо мне" className={cx({ [styles.view]: inView })}>
+      <PageItem title="Обо мне" >
         <table>
           <tbody>
             <tr>

@@ -5,7 +5,8 @@ import Resume from '../Resume/Resume';
 import Portfolio from '../Portfolio/Portfollio';
 
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
+import { useInView } from 'framer-motion';
 
 import styles from './Main.module.scss';
 
@@ -15,6 +16,7 @@ type Props = {
 };
 
 const Main: React.FC<Props> = (props) => {
+  const router = useRouter();
   const { asPath } = useRouter();
   const [activeUrl, setActiveUrl] = useState<string>('/');
 
@@ -22,15 +24,27 @@ const Main: React.FC<Props> = (props) => {
     setActiveUrl(asPath);
   }, [asPath]);
 
+  const rootRef = useRef(null);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { root: rootRef, once: false });
+
+  useEffect(() => {
+
+    console.log(`About is visible: ${isInView}`);
+  }, [isInView]);
+
   return (
     <div className={styles.home_wrapper}>
       <div className={styles.home_container}>
         <Header />
-        <main className={styles.main}>
+        {/* <button onClick={() => {router.push('/#portfolio', 'xxx')}}>Link</button> */}
+        <main className={styles.main} ref={rootRef}>
           <Home />
 
           <div style={{ height: '100%', width: '100%', position: 'relative' }}>
-            <About className={`page ${activeUrl === '/' ? 'active' : ''}`} />
+            <div ref={ref}>
+              <About className={`page ${activeUrl === '/' ? 'active' : ''}`} />
+            </div>
 
             <Resume
               className={`page ${activeUrl === '/#resume' ? 'active' : ''}`}
