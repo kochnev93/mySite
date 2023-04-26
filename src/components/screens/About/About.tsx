@@ -12,6 +12,19 @@ type Props = {
   id?: string;
 };
 
+const getAge = () => {
+  let today = new Date();
+  let birthDate = new Date(1993, 4, 18);
+
+  let age = today.getFullYear() - birthDate.getFullYear();
+  let m = today.getMonth() - birthDate.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) age--;
+  
+  return age;
+}
+
+
+
 const About: React.FC<Props> = (props) => {
   const { ref, inView, entry } = useInView({
     threshold: 0,
@@ -25,6 +38,18 @@ const About: React.FC<Props> = (props) => {
       ref={ref}
     >
       <PageItem title="Обо мне" className={cx({ [styles.view]: inView })}>
+        <table>
+          <tbody>
+            <tr>
+              <th>Возраст:</th>
+              <td>{getAge()}</td>
+            </tr>
+            <tr>
+              <th>Адрес:</th>
+              <td>Россия, Санкт-Петербург</td>
+            </tr>
+          </tbody>
+        </table>
         <p>
           Привет! Меня зовут Антон, и&nbsp;я&nbsp;frontend-разработчик. Живу
           и&nbsp;работаю в&nbsp;Санкт-Петербурге.

@@ -8,6 +8,8 @@ import styles from './Header.module.scss';
 //Components
 import PrintedText from '../PrintedText/PrintedText';
 import Menu from './Menu';
+import ScrollProgress from '../_elements/ScrollProgress/ScrollProgress';
+
 
 //Icons
 import { RxHamburgerMenu } from 'react-icons/rx';
@@ -63,6 +65,8 @@ const Header: FC = () => {
           />
         </div>
       </div>
+
+      <ScrollProgress/>
 
       <Menu items={menu} visible={visible}/>
 

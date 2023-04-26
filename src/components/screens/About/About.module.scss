@@ -1,9 +1,27 @@
 .about {
+  font-size: calc(14px + 2 * (100vw - 320px) / 880);
+
+  table{
+    margin-bottom: 20px;
+
+    th{
+      padding: 3px 3px 3px 0;
+    }
+
+    td{
+      padding: 3px;
+      color: grey;
+    }
+    th{
+      text-align: left;
+      color: var(--main-color);
+    }
+  }
 
   p {
     margin-bottom: 20px;
     line-height: 1.5;
-    font-size: calc(14px + 2 * (100vw - 320px) / 880);
+    font-size: inherit;
     opacity: 0.9;
     letter-spacing: 1px;
   }
