@@ -26,7 +26,7 @@ const Main: React.FC<Props> = (props) => {
 
   const rootRef = useRef(null);
   const ref = useRef(null);
-  const isInView = useInView(ref, { root: rootRef, once: false });
+  const isInView = useInView(ref);
 
   useEffect(() => {
 
@@ -38,13 +38,13 @@ const Main: React.FC<Props> = (props) => {
       <div className={styles.home_container}>
         <Header />
         {/* <button onClick={() => {router.push('/#portfolio', 'xxx')}}>Link</button> */}
-        <main className={styles.main} ref={rootRef}>
+        <main className={styles.main} >
           <Home />
 
           <div style={{ height: '100%', width: '100%', position: 'relative' }}>
-            <div ref={ref}>
-              <About className={`page ${activeUrl === '/' ? 'active' : ''}`} />
-            </div>
+
+              <About className={`page ${activeUrl === '/' ? 'active' : ''}`} ref={ref} />
+
 
             <Resume
               className={`page ${activeUrl === '/#resume' ? 'active' : ''}`}

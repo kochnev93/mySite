@@ -27,7 +27,7 @@
   background-color: #222;
   transform-origin: center left;
   opacity: 0;
-  transform: translate(0, 800px);
+  transform: translate(0, 1000px);
   transition: visibility 1s linear, opacity 1s linear;
   display: block;
   width: 100%;
@@ -52,7 +52,7 @@
 
 @keyframes pageAnimateIn {
   0% {
-    transform: translate(0, 800px);
+    transform: translate(0, 1000px);
     opacity: 0;
   }
 

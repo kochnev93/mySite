@@ -1,6 +1,5 @@
 import cx from 'classnames';
-import { useInView } from 'react-intersection-observer';
-
+import { forwardRef } from "react";
 //Styles
 import styles from './About.module.scss';
 
@@ -12,6 +11,8 @@ type Props = {
   id?: string;
   ref?: React.RefObject<HTMLDivElement>
 };
+
+type Ref = HTMLDivElement;
 
 const getAge = () => {
   let today = new Date();
@@ -25,15 +26,13 @@ const getAge = () => {
 }
 
 
-
-const About: React.FC<Props> = (props) => {
-
+const About = forwardRef<Ref, Props>( (props, ref) => {
   return (
     <div
       id={props.id}
       className={cx(styles.about, props.className)}
       data-label={'About'}
-      ref={props.ref}
+      ref={ref}
     >
       <PageItem title="Обо мне" >
         <table>
@@ -77,6 +76,8 @@ const About: React.FC<Props> = (props) => {
       </PageItem>
     </div>
   );
-};
+} );
+
+
 
 export default About;
