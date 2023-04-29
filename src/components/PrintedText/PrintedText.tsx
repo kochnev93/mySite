@@ -15,7 +15,6 @@ const PrintedText: React.FC<Props> = (props) => {
   const [string, setString] = useState('');
 
   useEffect(() => {
-    console.log('USEEFFECT')
     typeLine();
   }, []);
 

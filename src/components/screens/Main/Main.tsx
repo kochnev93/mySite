@@ -37,7 +37,7 @@ const Main: React.FC<Props> = (props) => {
     <div className={styles.home_wrapper}>
       <div className={styles.home_container}>
         <Header />
-        {/* <button onClick={() => {router.push('/#portfolio', 'xxx')}}>Link</button> */}
+
         <main className={styles.main} >
           <Home />
 

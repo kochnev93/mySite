@@ -6,19 +6,15 @@ import Layout_P from '@/components/Layouts/LayoutPortfolio/Layout_P';
 import Description from '@/components/_elements/Portfolio/Description/Description';
 import PhotoViewer from '@/components/_elements/PhotoViewer/PhotoViewer';
 import Steps from '@/components/_elements/Portfolio/SteopsOfDev/Steps';
+import Meta from '@/components/SEO/Meta';
 
 export default function Salang() {
   return (
     <>
-      <Head>
-        <title>Портфолио - Salang</title>
-        <meta
-          name="description"
-          content="Привет, меня зовут Антон, это страница обо мне"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Meta
+        title="Salang Store"
+        description="Портфолио Кочнева Антона, frontend-разработчика. Salang - интернет-магазин"
+      />
 
       <Cursor />
 

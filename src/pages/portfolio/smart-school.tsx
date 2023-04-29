@@ -6,19 +6,15 @@ import Description from '@/components/_elements/Portfolio/Description/Descriptio
 import Layout_P from '@/components/Layouts/LayoutPortfolio/Layout_P';
 import Steps from '@/components/_elements/Portfolio/SteopsOfDev/Steps';
 import PhotoViewer from '@/components/_elements/PhotoViewer/PhotoViewer';
+import Meta from '@/components/SEO/Meta';
 
 export default function SmartSchool() {
   return (
     <>
-      <Head>
-        <title>Портфолио - Smart School</title>
-        <meta
-          name="description"
-          content="Привет, меня зовут Антон, это страница обо мне"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Meta
+        title="Smart School"
+        description="Портфолио Кочнева Антона, frontend-разработчика. Smart School - центр образовательных услуг"
+      />
 
       <Cursor />
 
@@ -52,12 +48,30 @@ export default function SmartSchool() {
             className="photos"
             hoverEffects={true}
             images={[
-              { src: '/Portfolio/SmartSchool/smart1.webp', alt: 'Smart School 1' },
-              { src: '/Portfolio/SmartSchool/smart2.webp', alt: 'Smart School 2' },
-              { src: '/Portfolio/SmartSchool/smart3.webp', alt: 'Smart School 3' },
-              { src: '/Portfolio/SmartSchool/smart4.webp', alt: 'Smart School 4' },
-              { src: '/Portfolio/SmartSchool/smart5.webp', alt: 'Smart School 5' },
-              { src: '/Portfolio/SmartSchool/smart6.webp', alt: 'Smart School 6' },
+              {
+                src: '/Portfolio/SmartSchool/smart1.webp',
+                alt: 'Smart School 1',
+              },
+              {
+                src: '/Portfolio/SmartSchool/smart2.webp',
+                alt: 'Smart School 2',
+              },
+              {
+                src: '/Portfolio/SmartSchool/smart3.webp',
+                alt: 'Smart School 3',
+              },
+              {
+                src: '/Portfolio/SmartSchool/smart4.webp',
+                alt: 'Smart School 4',
+              },
+              {
+                src: '/Portfolio/SmartSchool/smart5.webp',
+                alt: 'Smart School 5',
+              },
+              {
+                src: '/Portfolio/SmartSchool/smart6.webp',
+                alt: 'Smart School 6',
+              },
             ]}
           />
         </PageItem>

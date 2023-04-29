@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Cursor from '@/components/Cursor/Cursor';
 import Background from '@/components/Background/Background';
 import PageItem from '@/components/PageItem/PageItem';
@@ -6,19 +5,15 @@ import Description from '@/components/_elements/Portfolio/Description/Descriptio
 import Layout_P from '@/components/Layouts/LayoutPortfolio/Layout_P';
 import Steps from '@/components/_elements/Portfolio/SteopsOfDev/Steps';
 import PhotoViewer from '@/components/_elements/PhotoViewer/PhotoViewer';
+import Meta from '@/components/SEO/Meta';
 
-export default function SmartSchool() {
+export default function Storage() {
   return (
     <>
-      <Head>
-        <title>Портфолио - Storage</title>
-        <meta
-          name="description"
-          content="Привет, меня зовут Антон, это страница обо мне"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Meta
+        title="Storage"
+        description="Портфолио Кочнева Антона, frontend-разработчика. Storage - модуль складского учета"
+      />
 
       <Cursor />
 
@@ -28,7 +23,7 @@ export default function SmartSchool() {
             title="Storage"
             client='ООО "Вита"'
             stack="React (redux-toolkit, react-hooks), Express JS, MySQL"
-            target='Разработать модуль для учета оборудования'
+            target="Разработать модуль для учета оборудования"
           />
         </PageItem>
 
