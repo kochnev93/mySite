@@ -9,7 +9,7 @@ const Footer: FC = () => {
       &#169; {new Date().getFullYear()}, Разработано&nbsp;
       <a href="https://github.com/kochnev93">мной</a>&nbsp;с&nbsp;
 
-      <AiFillHeart ?>
+      <AiFillHeart />
     </footer>
   );
 };
