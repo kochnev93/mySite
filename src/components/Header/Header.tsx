@@ -12,6 +12,10 @@ import ScrollProgress from '../_elements/ScrollProgress/ScrollProgress';
 
 
 //Icons
+ 
+
+import { FaUserAlt } from 'react-icons/fa'
+
 import { RxHamburgerMenu } from 'react-icons/rx';
 
 //Next
