@@ -35,13 +35,13 @@ const Meta: FC<PropsWithChildren<IMeta>> = ({
         } Кочнев Антон, Kochnev Anton, веб-разработчик, web, frontend, developer, html, css, javascript, react, NextJS`}
       />
 
-      <meta property="og:title" content="Кочнев Антон | Frontend-разработчик" />
+      <meta property="og:title" content={getTitle(title)} />
       <meta
         property="og:description"
-        content="Портфолио Кочнева Антона, frontend-разработчика"
+        content={description}
       />
       <meta property="og:type" content="website" />
-      <meta property="og:image" content="/photo3.webp" />
+      <meta property="og:image" content="/preview.png" />
     </Head>
   );
 };

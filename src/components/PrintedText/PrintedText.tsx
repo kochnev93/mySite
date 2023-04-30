@@ -35,12 +35,12 @@ const PrintedText: React.FC<Props> = (props) => {
         setString(result + ' |');
         count++;
 
-        console.log({
-          line: line,
-          count: count,
-          lengthStr: text[line].length,
-          result: result
-        })
+        // console.log({
+        //   line: line,
+        //   count: count,
+        //   lengthStr: text[line].length,
+        //   result: result
+        // })
   
         typeLine();
       }, 150);
