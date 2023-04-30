@@ -1,14 +1,15 @@
 import cx from 'classnames';
+import { portfolioData } from '@/data/portfolio/portfolio';
 import { useInView } from 'react-intersection-observer';
-import { useEffect } from 'react'
-import { useRouter } from 'next/router';
+
 
 //Styles
 import styles from './Portfolio.module.scss';
 
 // Components
 import PageItem from '@/components/PageItem/PageItem';
-import PortfolioList from './PortfolioList';
+import PortfolioCard from './PortfolioCard';
+
 
 type Props = {
   className?: string;
@@ -16,26 +17,29 @@ type Props = {
 };
 
 const Portfolio: React.FC<Props> = (props) => {
-  const router = useRouter();
-
   const { ref, inView, entry } = useInView({
     threshold: 0,
   });
-
-  // useEffect(() => {
-  //   if(inView) router.push('/#portfolio')
-  // }, [inView])
-
 
   return (
     <div
       id={props.id}
       className={cx(styles.portfolio, props.className)}
       data-label={'Works'}
-      ref={ref}
     >
       <PageItem title="Портфолио">
-        <PortfolioList />
+        <ul className={cx(styles.portfolio_block, {[styles.view]: inView})} ref={ref}>
+          {portfolioData.map((item) => {
+            return (
+              <PortfolioCard
+                key={item.id}
+                title={item.title}
+                href={item.href}
+                img={item.img}
+              />
+            );
+          })}
+        </ul>
       </PageItem>
     </div>
   );

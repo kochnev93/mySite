@@ -1,5 +1,6 @@
 import { FC, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import cx from 'classnames';
 import { menuData } from '@/data/menu/menu';
 
 //Styles
@@ -8,18 +9,15 @@ import styles from './Header.module.scss';
 //Components
 import PrintedText from '../PrintedText/PrintedText';
 import Menu from './Menu';
-import ScrollProgress from '../_elements/ScrollProgress/ScrollProgress';
-
 
 //Icons
- 
-
-import { FaUserAlt } from 'react-icons/fa'
-
+import { FaUserAlt } from 'react-icons/fa';
 import { RxHamburgerMenu } from 'react-icons/rx';
 
 //Next
 import Image from 'next/image';
+import Link from 'next/link';
+
 
 
 
@@ -70,10 +68,26 @@ const Header: FC = () => {
         </div>
       </div>
 
-      <ScrollProgress/>
-
       <Menu items={menu} visible={visible}/>
 
+      {/* <nav className={cx(styles.nav, { [styles.active]: visible })}>
+        <ul className={styles.menu}>
+          {menu.map((item) => {
+            return (
+              <li
+                key={item.id}
+                className={item.activeClass}
+              >
+                <Link href={item.href}>
+                  <FaUserAlt />
+                  <span>{item.title}</span>
+                </Link>
+              </li>
+            );
+          })}
+
+        </ul>
+      </nav> */}
     </header>
   );
 };
