@@ -1,112 +1,83 @@
 .skills {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 20px;
-  list-style: none;
-}
-
-.skill {
-  display: flex;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 10px;
-  position: relative;
-  cursor: pointer;
-
-  --borderWidth: 2px;
-  background: #1d1f20;
-  border-radius: var(--borderWidth);
-  transition: all 0.5s ease;
-
-  svg {
-    font-size: 32px;
-    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+    list-style: none;
   }
 
-  h4 {
-    margin-bottom: 10px;
-  }
 
-  span {
-    color: grey;
-    font-size: 14px;
-  }
-}
+  .skill {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
 
 
-@keyframes show {
-  0% {
-    right: -20px;
-  }
-  100% {
-    right: 0;
-  }
-}
+    --borderWidth: 2px;
+    background: #1d1f20;
+    border-radius: var(--borderWidth);
+    transition: all .5s ease;
 
-.skill:hover {
-  background: transparent;
-  color: var(--second-color);
 
-  span {
-    color: inherit;
-  }
-}
 
-.skill:after {
-  content: '';
-  position: absolute;
-  top: calc(-1 * var(--borderWidth));
-  left: calc(-1 * var(--borderWidth));
-  height: calc(100% + var(--borderWidth) * 2);
-  width: calc(100% + var(--borderWidth) * 2);
-  background: linear-gradient(60deg, #f79533, rgb(255, 217, 0));
-  border-radius: calc(2 * var(--borderWidth));
-  z-index: -1;
-  animation: animatedgradient 5s ease alternate infinite;
-  background-size: 300% 300%;
-}
+    svg{
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
 
-@keyframes animatedgradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+    h4{
+        margin-bottom: 10px;
+    }
 
-@media (min-width: 1200px) {
-  @for $i from 1 to 20 {
-    $side: $i * 0.1;
-    .skills.inview li:nth-child(#{$i}) {
-      animation: show 0.8s ease-in-out;
-      animation-delay: #{$side}s;
-      -webkit-animation-fill-mode: both;
-      animation-fill-mode: both;
+
+    span{
+        color: grey;
+        font-size: 14px;
     }
   }
 
-  .skill.inview {
-    animation: none;
-  }
-}
+  .skill:hover{
+    background: transparent;
+    color: var(--second-color);
 
-@media (max-width: 1200px) {
-
-  .skills.inview li {
-    animation: none;
+    span{
+        color: inherit;
+    }
   }
 
-  .skill.inview {
-    animation: show 0.8s ease-in-out !important;
-    animation-delay: 0.1s;
 
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
+  .skill:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(
+      60deg,
+      #f79533,
+      rgb(255, 217, 0),
+    );
+    border-radius: calc(2 * var(--borderWidth));
+    z-index: -1;
+    animation: animatedgradient 5s ease alternate infinite;
+    background-size: 300% 300%;
   }
-}
+
+
+  @keyframes animatedgradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
+  

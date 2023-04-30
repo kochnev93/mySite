@@ -1,23 +1,22 @@
-@import '@/styles/mixins/border';
-
-.title {
+.page_title {
   display: block;
   position: relative;
   padding: 15px 0;
 }
 
-.title:first-letter {
+.page_title:first-letter {
   color: var(--main-color);
   opacity: 0.9;
 }
 
-.title:before {
+.page_title:before {
   content: '';
   position: absolute;
   left: -10px;
   bottom: 20%;
   width: 30px;
   height: 30px;
+
   background: linear-gradient(
     135deg,
     rgba(246, 184, 70, 0.4) 0%,
@@ -28,16 +27,16 @@
   opacity: 0.5;
 }
 
-.title:after {
-  @include border;
+.page_title:after {
+  content: '';
+  position: absolute;
   bottom: 0;
   left: 0;
-}
-
-.content {
-  padding: 15px 0;
-}
-
-.item {
-  margin-bottom: 30px;
+  width: 100%;
+  height: 1px;
+  background: radial-gradient(
+    ellipse at left,
+    rgba(197, 202, 213, 0.15) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
 }

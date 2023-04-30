@@ -1,7 +1,5 @@
 import { FC } from 'react';
 import { ReactNode } from 'react';
-import cx from 'classnames';
-import styles from './PageItem.module.scss';
 
 type Props = {
   children: ReactNode;
@@ -11,10 +9,19 @@ type Props = {
 
 const PageItem: FC<Props> = (props) => {
   return (
-    <section className={cx(styles.item, props.className ? props.className : '')}>
-      <h2 className={styles.title}>{props.title}</h2>
-      <div className={styles.content}>{props.children}</div>
-    </section>
+    <div
+      className={`page_item ${props.className ? props.className : ''}`.trim()}
+    >
+      <h2 className="page_title">{props.title}</h2>
+
+      <div
+        className={`page_content ${
+          props.className ? props.className : ''
+        }`.trim()}
+      >
+        {props.children}
+      </div>
+    </div>
   );
 };
 

@@ -1,27 +1,34 @@
 export const portfolioData = [
-  {
-    id: 1,
-    title: 'Smart School',
-    href: '/portfolio/smart-school',
-    img: 'Portfolio/SmartSchool/smart_main.webp',
-  },
-  {
-    id: 2,
-    title: 'Salang',
-    href: '/portfolio/salang',
-    img: 'Portfolio/Salang/salang_main.webp',
-  },
-  {
-    id: 3,
-    title: 'Storage',
-    href: '/portfolio/mz_storage',
-    img: 'Portfolio/Storage/storage6.webp',
-  },
-];
-
-export interface IPortfolio {
-  id: number;
-  title: string;
-  href: string;
-  img: string;
-}
+    {
+      id: 1,
+      title: 'Smart School',
+      href: '/123',
+      img: 'smart_school.png'
+    },
+    {
+        id: 2,
+        title: 'Salang',
+        href: '/123',
+        img: 'salang.png'
+      },
+      {
+        id: 3,
+        title: 'Smart School',
+        href: '/123',
+        img: 'smart_school.png'
+      },
+      {
+          id: 4,
+          title: 'Salang',
+          href: '/123',
+          img: 'salang.png'
+        },
+  ];
+  
+  export interface IPortfolio {
+      id: number,
+      title: string,
+      href: string,
+      img: string
+  }
+  
