@@ -1,0 +1,30 @@
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--second-color);
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: 30px;
+    padding: 5px 0;
+    font-size: 12px;
+    color: grey;
+    z-index: 500;
+    opacity: 0.9;
+
+
+    a{
+        border-bottom: 1px solid grey;
+        transition: all .5s ease;
+    }
+
+    a:hover{
+        color: var(--main-color);
+        border-bottom: 1px solid var(--main-color);
+    }
+
+}

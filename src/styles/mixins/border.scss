@@ -1,0 +1,19 @@
+@mixin border{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: radial-gradient(
+    ellipse at left,
+    rgba(197, 202, 213, 0.15) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+}
+
+@mixin border-vertical{
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background: radial-gradient(ellipse at left, rgba(197, 202, 213, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+}
