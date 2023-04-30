@@ -5,6 +5,10 @@ import Education from '@/components/Education/Education';
 import PageItem from '@/components/PageItem/PageItem';
 import Skills from '@/components/Skills/Skills';
 
+import { useInView } from 'react-intersection-observer';
+import { useEffect } from 'react'
+import { useRouter } from 'next/router';
+
 //Icons
 import { MdWorkOutline } from 'react-icons/md';
 import { MdSchool } from 'react-icons/md';
@@ -14,11 +18,26 @@ type Props = {
   id?: string;
 };
 
-const Resume: React.FC<Props> = (props) => (
-  <div
+
+
+const Resume: React.FC<Props> = (props) => {
+  const router = useRouter();
+
+  const { ref, inView, entry } = useInView({
+    threshold: 0,
+  });
+
+  // useEffect(() => {
+  //   if(inView) router.push('/#resume')
+  // }, [inView])
+
+  
+  return (
+    <div
     id={props.id}
     className={cx(styles.resume, props.className)}
     data-label={'Resume'}
+    ref={ref}
   >
     <PageItem title="Резюме" className={styles.resume_block}>
    
@@ -42,6 +61,7 @@ const Resume: React.FC<Props> = (props) => (
       <Skills />
     </PageItem>
   </div>
-);
+  )
+};
 
 export default Resume;

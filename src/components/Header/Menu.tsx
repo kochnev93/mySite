@@ -31,6 +31,26 @@ const getIcon = (icon: string) => {
   }
 };
 
+const buttonHandler = (attr: string) => {
+  const scrollTarget = document.querySelector('[data-label="'+attr+'"]');
+  const innerWidth = window.innerWidth;
+
+
+  if(window.innerWidth <= 1200 && scrollTarget){
+  const topOffset = innerWidth < 651 ? 150 : 0;
+  const elementPosition = scrollTarget.getBoundingClientRect().top;
+  const offsetPosition = elementPosition - topOffset;
+
+    window.scrollBy({
+    top: offsetPosition,
+    behavior: 'smooth',
+  });
+  
+  }
+
+
+};
+
 const Menu: FC<Props> = (props) => {
   return (
     <nav className={cx(styles.nav, { [styles.active]: props.visible })}>
@@ -38,7 +58,12 @@ const Menu: FC<Props> = (props) => {
         {props.items.map((item) => {
           return (
             <li key={item.id} className={item.activeClass}>
-              <Link href={item.href}>
+              <Link
+                href={item.href}
+                onClick={() => {
+                  buttonHandler(item.dataAttr);
+                }}
+              >
                 {getIcon(item.icon)}
                 <span>{item.title}</span>
               </Link>

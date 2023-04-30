@@ -6,16 +6,12 @@
   grid-gap: 20px;
 }
 
-// .portfolio_block.view {
-//   animation: show 1.3s ease-in-out;
-// }
-
 @function grid-width($n) {
   @return $n;
 }
 
-@for $i from 1 to 5 {
-  $side: $i * 0.2;
+@for $i from 1 to 50 {
+  $side: $i * 0.1;
   .portfolio_block.view li:nth-child(#{$i}) {
     animation: show .8s ease-in-out;
     animation-delay: #{$side}s;
@@ -32,7 +28,7 @@
 @keyframes show {
   0% {
     opacity: 0.3;
-    transform: translateY(30px);
+    transform: translateY(40px);
   }
   100% {
     opacity: 1;

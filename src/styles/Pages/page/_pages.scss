@@ -1,5 +1,3 @@
-@import '_title.scss';
-@import '_scroll.scss';
 
 .page::after {
   content: attr(data-label);
@@ -29,7 +27,7 @@
   background-color: #222;
   transform-origin: center left;
   opacity: 0;
-  transform: translate(0, 800px);
+  transform: translate(0, 1000px);
   transition: visibility 1s linear, opacity 1s linear;
   display: block;
   width: 100%;
@@ -50,17 +48,11 @@
   animation: pageAnimateIn 1s ease;
 }
 
-.page_content {
-  padding: 15px 0;
-}
 
-.page_item {
-  margin-bottom: 30px;
-}
 
 @keyframes pageAnimateIn {
   0% {
-    transform: translate(0, 800px);
+    transform: translate(0, 1000px);
     opacity: 0;
   }
 

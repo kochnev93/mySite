@@ -32,6 +32,7 @@ const Cursor: FC = () => {
       });
 
       let links = document.querySelectorAll('a');
+      let images = document.querySelectorAll('.img_zoom');
 
       links.forEach((elem)=>{
         elem.addEventListener('mouseover',()=>{
@@ -40,6 +41,16 @@ const Cursor: FC = () => {
 
         elem.addEventListener('mouseout',()=>{
           cursorRef.current?.classList.remove(`${styles.zoom}`);
+        })
+      })
+
+      images.forEach((elem)=>{
+        elem.addEventListener('mouseover',()=>{
+          cursorRef.current?.classList.add(`${styles.img_zoom}`);
+        })
+
+        elem.addEventListener('mouseout',()=>{
+          cursorRef.current?.classList.remove(`${styles.img_zoom}`);
         })
       })
 

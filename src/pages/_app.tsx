@@ -1,45 +1,45 @@
 import Preloader from '@/components/Preloader/Preloader';
-import '@/styles/globals.css';
-//import '@/styles/globals_pages.css';
-import '@/styles/vars.css';
 
-import '@/styles/Pages/pages.scss'
-
+import '@/styles/global/index.scss';
+import '@/styles/Pages/index.scss';
 
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
-// function Loading() {
-//   const [loading, setLoading] = useState<boolean>(false);
-//   const router = useRouter();
+function Loading() {
+  const [loading, setLoading] = useState<boolean>(false);
+  const router = useRouter();
 
-//   useEffect(() => {
-//     const handleStart = () => {
-//       setLoading(true);
-//     };
+  useEffect(() => {
+    const handleStart = () => {
+      setLoading(true);
+    };
 
-//     const handleComplete = () => {
-//       let timeout = setTimeout(() => {setLoading(false)}, 500);
-//       //return clearTimeout(timeout)
-//     };
+    const handleComplete = () => {
+      let timeout = setTimeout(() => {
+        setLoading(false);
+      }, 300);
 
-//     router.events.on('routeChangeStart', handleStart);
-//     router.events.on('routeChangeComplete', handleComplete);
+      //return clearTimeout(timeout)
+    };
 
-//     return () => {
-//       router.events.off('routeChangeStart', handleStart);
-//       router.events.off('routeChangeComplete', handleComplete);
-//     };
-//   }, [router.events]);
+    router.events.on('routeChangeStart', handleStart);
+    router.events.on('routeChangeComplete', handleComplete);
 
-//   return loading ? <Preloader/> : <></>;
-// }
+    return () => {
+      router.events.off('routeChangeStart', handleStart);
+      router.events.off('routeChangeComplete', handleComplete);
+    };
+  }, [router.events]);
+
+  return loading ? <Preloader /> : <></>;
+}
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-       {/* <Loading />  */}
+      <Loading />
       <Component {...pageProps} />
     </>
   );
