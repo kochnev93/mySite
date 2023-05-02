@@ -7,10 +7,10 @@ const Cursor: FC = () => {
   useEffect(() => {
     function initCursor() {
 
-      var mouseX = window.innerWidth / 2;
-      var mouseY = window.innerHeight / 2;
+      let mouseX = window.innerWidth / 2;
+      let mouseY = window.innerHeight / 2;
 
-      var cursor = {
+      let cursor = {
         el: cursorRef.current,
         x: window.innerWidth / 2,
         y: window.innerHeight / 2,
@@ -54,7 +54,7 @@ const Cursor: FC = () => {
         })
       })
 
-      var intervalCursor = setInterval(move, 1000 / 60);
+      let intervalCursor = setInterval(move, 1000 / 60);
 
       function move() {
         cursor.x = lerp(cursor.x, mouseX, 0.1);
