@@ -1,4 +1,14 @@
-export const experienceData = [
+export type TypeExperience = {
+    id: number,
+    company: string,
+    yearStart: string,
+    yearEnd: string,
+    presentTime: boolean,
+    position: string,
+    responsibilities: string[] 
+}
+
+export const experienceData:ReadonlyArray<TypeExperience> = [
     {
         id: 1,
         company: 'Стоматологический центр "Мой Зубной"',
@@ -40,7 +50,7 @@ export const experienceData = [
         position: 'Веб-разработчик',
         responsibilities: [
             'Разработка сайтов для компании',
-        ]
+        ],
     },
     {
         id: 4,

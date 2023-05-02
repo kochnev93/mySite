@@ -1,4 +1,14 @@
-export const educationData = [
+export type TypeEducation = {
+    id: number,
+    university: string,
+    faculty: string,
+    specialty: string,
+    city: string,
+    yearStart: string,
+    yearEnd: string,
+}
+
+export const educationData:ReadonlyArray<TypeEducation> = [
     {
         id: 3,
         university: 'Skillbox',
