@@ -44,17 +44,7 @@ const Cursor: FC = () => {
         })
       })
 
-      images.forEach((elem)=>{
-        elem.addEventListener('mouseover',()=>{
-          cursorRef.current?.classList.add(`${styles.img_zoom}`);
-        })
-
-        elem.addEventListener('mouseout',()=>{
-          cursorRef.current?.classList.remove(`${styles.img_zoom}`);
-        })
-      })
-
-      let intervalCursor = setInterval(move, 1000 / 60);
+      var intervalCursor = setInterval(move, 1000 / 60);
 
       function move() {
         cursor.x = lerp(cursor.x, mouseX, 0.1);
