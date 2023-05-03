@@ -39,7 +39,7 @@ const Header: FC = () => {
     });
 
     setMenu(newMenu);
-  }, [asPath, menu]);
+  }, [asPath]);
 
   return (
     <header className={styles.header}>
