@@ -29,6 +29,7 @@ const getAge = () => {
 };
 
 const About = forwardRef<Ref, Props>((props, ref) => {
+  console.log(aboutData);
   return (
     <div
       id={props.id}
@@ -53,30 +54,36 @@ const About = forwardRef<Ref, Props>((props, ref) => {
         </InView>
 
         <InView className={styles.about_text} activeClassName={styles.inview}>
-          Привет! Меня зовут Антон, и&nbsp;я&nbsp;frontend-разработчик. Живу
-          и&nbsp;работаю в&nbsp;Санкт-Петербурге.
+          Привет! Я&nbsp;Антон, frontend-разработчик из&nbsp;Санкт-Петербурга.
         </InView>
 
         <InView className={styles.about_text} activeClassName={styles.inview}>
-          У&nbsp;меня есть опыт создания адаптивных и&nbsp;динамичных веб-сайтов
-          с&nbsp;использованием современных фреймворков и&nbsp;библиотек, таких
-          как React, Next.js. Также у&nbsp;меня есть опыт разработки Fullstack.
+          Мой профессиональный опыт включает создание адаптивных
+          и&nbsp;динамичных веб-сайтов с&nbsp;использованием современных
+          фреймворков и&nbsp;библиотек, таких как React, Next.js и&nbsp;Express
+          JS. Кроме того, я&nbsp;имею опыт Fullstack разработки.
         </InView>
 
         <InView className={styles.about_text} activeClassName={styles.inview}>
-          Я&nbsp;целеустремленный и&nbsp;внимательный к&nbsp;деталям человек,
-          который всегда стремится создавать качественный код. Постоянно учусь
-          и&nbsp;слежу за&nbsp;последними тенденциями и&nbsp;лучшими практиками
-          frontend-разработки, и&nbsp;всегда стремлюсь осваивать новые навыки
-          и&nbsp;технологии. Мне нравится работать в&nbsp;команде,
-          и&nbsp;я&nbsp;всегда готов поделиться своими идеями и&nbsp;опытом для
-          достижения целей проекта.
+          Я&nbsp;являюсь целеустремленным и&nbsp;внимательным к&nbsp;деталям
+          специалистом, который всегда стремится создавать качественный код.
+          Постоянно обучаюсь и&nbsp;следую за&nbsp;последними тенденциями
+          в&nbsp;области frontend-разработки. Я&nbsp;готов осваивать новые
+          навыки и&nbsp;технологии, чтобы оставаться в&nbsp;тренде.
         </InView>
 
         <InView className={styles.about_text} activeClassName={styles.inview}>
-          Сейчас я&nbsp;активно ищу новые возможности в&nbsp;качестве Frontend
-          разработчика, где я&nbsp;могу продолжать оттачивать свои навыки
-          и&nbsp;расширять свои знания в&nbsp;области разработки веб-приложений.
+          Мне нравится работать в&nbsp;команде, где мы&nbsp;можем обмениваться
+          идеями и&nbsp;опытом для достижения общих целей проекта. Я&nbsp;готов
+          делиться своими знаниями и&nbsp;помогать коллегам в&nbsp;решении
+          сложных задач.
+        </InView>
+
+        <InView className={styles.about_text} activeClassName={styles.inview}>
+          Сейчас я&nbsp;ищу новые возможности для развития в&nbsp;качестве
+          Frontend разработчика. Я&nbsp;уверен, что мой опыт и&nbsp;умения
+          помогут мне стать ценным членом любой команды разработчиков
+          веб-приложений.
         </InView>
       </PageItem>
     </div>

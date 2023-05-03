@@ -69,12 +69,41 @@
     background: white;
 
     img {
+      position: relative;
+      top: -10px;
       width: 100%;
       height: auto;
       pointer-events: none;
     }
   }
 }
+
+// .img::before{
+//   content: '';
+
+//   position: absolute;
+//   border: 1px solid #f308cc;
+//   width: 150px;
+//   height: 150px;
+
+//   border-radius: 50%;
+//   animation: pulse 5s linear infinite;
+//   opacity: 0;
+// }
+
+// @keyframes pulse {
+//   0% {
+//    transform: scale(0.5);
+//    opacity: 0;
+//   }
+//   50% {
+//    opacity: 1;
+//   }
+//   100% {
+//    transform: scale(1.2);
+//    opacity: 0;
+//   }
+//  }
 
 .bio {
   text-align: center;
