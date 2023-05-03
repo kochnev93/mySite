@@ -11,6 +11,7 @@ import ResponsibilitiesItem from './ResponsibilitiesItem';
 
 
 const Experience: FC = () => {
+
   return (
     <ul className={styles.experience}>
       {experienceData.map((item) => {
