@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://kochnev-dev.ru" rel="noopener" target="_blank">
-    <img width="100" src="./public/pweview.png" alt="Logo" />
+    <img width="100" src="./public/preview.png" alt="Logo" />
   </a>
 </p>
 
