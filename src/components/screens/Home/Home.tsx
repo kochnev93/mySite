@@ -1,36 +1,81 @@
-import { FC } from 'react'
-import styles from './Home.module.scss'
+import { FC } from 'react';
+import styles from './Home.module.scss';
+import PrintedText from '@/components/PrintedText/PrintedText';
+import Image from 'next/image';
 
+import { HiOutlineDownload } from 'react-icons/hi';
+import { FaTelegramPlane } from 'react-icons/fa';
+
+//Icons
+import { IoLogoGithub } from 'react-icons/io';
+import { IoLogoLinkedin } from 'react-icons/io';
+import { FaTelegram } from 'react-icons/fa';
+import { FaPhoneSquareAlt } from 'react-icons/fa';
 
 const Home: FC = () => {
   return (
     <div className={styles.profile}>
       <div className={styles.slider}>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Moench_2339.jpg/1200px-Moench_2339.jpg" alt="" />
+        <Image
+          src="/wallpaper_1.webp"
+          alt=""
+          width={500}
+          height={500}
+          quality={90}
+        />
       </div>
-
 
       <div className={styles.bio}>
         <div className={styles.img}>
           <div className={styles.img__wrapper}>
-            <img src="https://cs14.pikabu.ru/post_img/2023/02/13/8/1676295806139337963.jpg" alt="" />
+            <Image
+              src="/photo3.webp"
+              alt="Кочнев Антон"
+              width={300}
+              height={300}
+              quality={50}
+            />
           </div>
         </div>
         <div className={styles.bio__title}>
-        <h1>Кочнев Антон</h1>
+          <h1>Кочнев Антон</h1>
         </div>
-        <div className={styles.bio__subtitle}>Разработчик</div>
-        <div className={styles.social}>social</div>
+        <PrintedText />
+        <div className={styles.social}>
+          <a href="https://github.com/kochnev93">
+            <IoLogoGithub />
+          </a>
+
+          <a href="https://www.linkedin.com/in/kochnev-ae">
+            <IoLogoLinkedin />
+          </a>
+
+          <a href="https://t.me/kochnev_ae">
+            <FaTelegram />
+          </a>
+
+          <a href="tel:+79995285154">
+            <FaPhoneSquareAlt />
+          </a>
+        </div>
       </div>
 
       <div className={styles.actions}>
-        <button>Скачать резюме</button>
-        <button>Написать</button>
+        <div>
+          <a href="#">
+            <span>Скачать резюме</span>
+            <HiOutlineDownload />
+          </a>
+        </div>
+        <div>
+          <a href="https://t.me/kochnev_ae">
+            <span>Написать в Telegram</span>
+            <FaTelegramPlane />
+          </a>
+        </div>
       </div>
-
-      
     </div>
-  )
-}
+  );
+};
 
-export default Home 
+export default Home;

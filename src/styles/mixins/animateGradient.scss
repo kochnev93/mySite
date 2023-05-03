@@ -1,0 +1,41 @@
+$borderWidth: 3px;
+
+
+@mixin animateGradient{
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background: radial-gradient(ellipse at left, rgba(197, 202, 213, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+  }
+
+.skill:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(
+      60deg,
+      #f79533,
+      rgb(255, 217, 0),
+    );
+    border-radius: calc(2 * var(--borderWidth));
+    z-index: -1;
+    animation: animatedgradient 5s ease alternate infinite;
+    background-size: 300% 300%;
+  }
+
+
+  @keyframes animatedgradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }

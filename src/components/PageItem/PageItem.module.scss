@@ -1,0 +1,43 @@
+@import '@/styles/mixins/border';
+
+.title {
+  display: block;
+  position: relative;
+  padding: 15px 0;
+}
+
+.title:first-letter {
+  color: var(--main-color);
+  opacity: 0.9;
+}
+
+.title:before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  bottom: 20%;
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(
+    135deg,
+    rgba(246, 184, 70, 0.4) 0%,
+    rgba(246, 184, 70, 0.01) 100%
+  );
+  z-index: -1;
+  border-radius: 30px;
+  opacity: 0.5;
+}
+
+.title:after {
+  @include border;
+  bottom: 0;
+  left: 0;
+}
+
+.content {
+  padding: 15px 0;
+}
+
+.item {
+  margin-bottom: 30px;
+}

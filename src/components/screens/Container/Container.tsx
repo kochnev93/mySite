@@ -1,4 +1,3 @@
-import Header from '@/components/Header/Header';
 import { ReactNode } from 'react';
 
 type Props = {
@@ -6,13 +5,7 @@ type Props = {
 };
 
 const Contaier = ({ children }: Props) => {
-  return (
-    <div className="layoat">
-      <div className="container">
-        {children}
-        </div>
-    </div>
-  );
+  return <div className="container">{children}</div>;
 };
 
 export default Contaier;
