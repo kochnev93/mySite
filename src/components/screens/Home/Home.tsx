@@ -42,15 +42,15 @@ const Home: FC = () => {
         </div>
         <PrintedText />
         <div className={styles.social}>
-          <a href="https://github.com/kochnev93">
+          <a href="https://github.com/kochnev93" target="_blank">
             <IoLogoGithub />
           </a>
 
-          <a href="https://www.linkedin.com/in/kochnev-ae">
+          <a href="https://www.linkedin.com/in/kochnev-ae" target="_blank">
             <IoLogoLinkedin />
           </a>
 
-          <a href="https://t.me/kochnev_ae">
+          <a href="https://t.me/kochnev_ae" target="_blank">
             <FaTelegram />
           </a>
 
@@ -62,7 +62,7 @@ const Home: FC = () => {
 
       <div className={styles.actions}>
         <div>
-          <a href="#">
+          <a href="/assets/Resume Kochnev_AE.pdf" download>
             <span>Скачать резюме</span>
             <HiOutlineDownload />
           </a>

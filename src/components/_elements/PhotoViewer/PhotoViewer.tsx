@@ -26,7 +26,7 @@ const PhotoViewer: React.FC<Props> = (props) => {
                 src={img.src}
                 alt={img.alt}
                 width={150}
-                height={90}
+                height={74}
                 quality={75}
                 blurDataURL={img.src}
                 placeholder="blur"
