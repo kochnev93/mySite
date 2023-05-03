@@ -29,7 +29,7 @@ const getAge = () => {
 };
 
 const About = forwardRef<Ref, Props>((props, ref) => {
-  console.log(aboutData);
+
   return (
     <div
       id={props.id}

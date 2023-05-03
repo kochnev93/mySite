@@ -62,7 +62,7 @@ const Home: FC = () => {
 
       <div className={styles.actions}>
         <div>
-          <a href="#">
+          <a href="/assets/Resume Kochnev_AE.pdf" download>
             <span>Скачать резюме</span>
             <HiOutlineDownload />
           </a>
