@@ -1,0 +1,16 @@
+.social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    column-gap: 15px;
+  
+    a{
+      font-size: 20px;
+      transition: color .3s ease;
+    }
+  
+    a:hover{
+      color: var(--main-color);
+    }
+  }
