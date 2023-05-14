@@ -22,14 +22,14 @@ const Home: FC = () => {
       </div>
 
       <div className={styles.bio}>
-
         <div className={styles.photo_wrapper}>
-          <PhotoViewer
+          <Image
             className={styles.photo}
-            hoverEffects={false}
-            images={[
-              { src: '/my_photo.webp', alt: 'Кочнев Антон' },
-            ]}
+            src="/my_photo.webp"
+            alt="Кочнев Антон"
+            width={150}
+            height={74}
+            quality={90}
           />
         </div>
 
@@ -37,8 +37,7 @@ const Home: FC = () => {
 
         <PrintedText />
 
-        <Social/>
-
+        <Social />
       </div>
 
       <div className={styles.actions}>
