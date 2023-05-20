@@ -25,7 +25,7 @@ const Meta: FC<PropsWithChildren<IMeta>> = ({
         <meta name="robots" content="noindex, nofollow" />
       )}
 
-      <link rel="icon" href="/favicon.png" />
+      <link rel="icon" href="/favicon.png" type="image/png" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="author" content="Kochnev Anton | Frontend Developer" />
       <meta
@@ -42,6 +42,9 @@ const Meta: FC<PropsWithChildren<IMeta>> = ({
       />
       <meta property="og:type" content="website" />
       <meta property="og:image" content="/preview.png" />
+
+
+
     </Head>
   );
 };

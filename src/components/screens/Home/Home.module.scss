@@ -11,15 +11,13 @@
   width: 50%;
   background-color: #222222;
 
-
   -webkit-box-shadow: 10px 0px 14px -1px rgba(0, 0, 0, 0.26);
   -moz-box-shadow: 10px 0px 14px -1px rgba(0, 0, 0, 0.26);
   box-shadow: 10px 0px 14px -1px rgba(0, 0, 0, 0.26);
 
   z-index: 20;
-   overflow: hidden;
+  overflow: hidden;
 }
-
 
 .slider {
   position: absolute;
@@ -37,7 +35,6 @@
     width: 100%;
     height: 100%;
     transform: scale(1.1);
-    // transition: all 0.4s ease 0s;
     animation: img 15s ease infinite;
   }
 
@@ -54,77 +51,9 @@
   }
 }
 
-.img {
-  position: relative;
-  margin-top: 10px;
-  margin-bottom: 20px;
-
-  &__wrapper {
-    width: 150px;
-    height: 150px;
-    overflow: hidden;
-    border-radius: 50%;
-    border: 4px solid white;
-    margin: 0 auto;
-    background: white;
-
-    img {
-      position: relative;
-      top: -10px;
-      width: 100%;
-      height: auto;
-      pointer-events: none;
-    }
-  }
-}
-
-// .img::before{
-//   content: '';
-
-//   position: absolute;
-//   border: 1px solid #f308cc;
-//   width: 150px;
-//   height: 150px;
-
-//   border-radius: 50%;
-//   animation: pulse 5s linear infinite;
-//   opacity: 0;
-// }
-
-// @keyframes pulse {
-//   0% {
-//    transform: scale(0.5);
-//    opacity: 0;
-//   }
-//   50% {
-//    opacity: 1;
-//   }
-//   100% {
-//    transform: scale(1.2);
-//    opacity: 0;
-//   }
-//  }
-
 .bio {
   text-align: center;
   z-index: 15;
-}
-
-.social{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 15px 0;
-  column-gap: 15px;
-
-  a{
-    font-size: 20px;
-    transition: color .3s ease;
-  }
-
-  a:hover{
-    color: var(--main-color);
-  }
 }
 
 .actions {
@@ -149,8 +78,7 @@
     height: 100%;
     position: relative;
 
-
-    a{
+    a {
       flex: auto;
       display: flex;
       justify-content: center;
@@ -160,27 +88,23 @@
       font-size: 12px;
       height: 100%;
       width: 100%;
-      
 
-      span{
+      span {
         margin-right: 10px;
-        transition: all .5s ease;
+        transition: all 0.5s ease;
       }
 
-      svg{
+      svg {
         font-size: 16px;
       }
-
     }
 
-    a:hover{
+    a:hover {
       color: #ffc810;
-      span{
+      span {
         margin-right: 15px;
       }
     }
-
-
   }
 
   div:nth-child(1):before {
@@ -190,19 +114,26 @@
     top: 0;
     width: 1px;
     height: 100%;
-    background: radial-gradient(ellipse at top, rgba(197, 202, 213, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
-
+    background: radial-gradient(
+      ellipse at top,
+      rgba(197, 202, 213, 0.15) 0%,
+      rgba(255, 255, 255, 0) 70%
+    );
   }
 }
 
-.actions::before{
+.actions::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 1px;
-  background: radial-gradient(ellipse at left, rgba(197, 202, 213, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+  background: radial-gradient(
+    ellipse at left,
+    rgba(197, 202, 213, 0.15) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
 }
 
 @keyframes img {
@@ -225,4 +156,34 @@
     width: 100%;
     margin-bottom: 20px;
   }
+}
+
+.photo_wrapper {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  border: 4px solid rgb(255, 255, 255);
+  background: white;
+  transition: all 0.4s ease-in-out;
+
+  &:hover {
+    border: 4px solid var(--main-color);
+    -webkit-box-shadow: 0px 0px 22px 14px rgba(251, 211, 0, 0.2);
+    -moz-box-shadow: 0px 0px 22px 14px rgba(251, 211, 0, 0.2);
+    box-shadow: 0px 0px 22px 14px rgba(251, 211, 0, 0.2);
+  }
+}
+
+.photo {
+  position: relative;
+  top: -10px;
+  width: 100%;
+  height: auto;
 }

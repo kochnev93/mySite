@@ -4,6 +4,8 @@
   </a>
 </p>
 
-<h1 align="center">Kochnev Anton</h1>
+**<h1 align="center">Kochnev Anton</h1>**
 
 ## Hi! 👋 &nbsp;I'm [Kochnev Anton][website], a frontend developer 👨‍💻
+
+[website]: https://kochnev-dev.ru

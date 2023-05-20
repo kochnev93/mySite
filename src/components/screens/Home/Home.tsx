@@ -2,15 +2,11 @@ import { FC } from 'react';
 import styles from './Home.module.scss';
 import PrintedText from '@/components/PrintedText/PrintedText';
 import Image from 'next/image';
+import Social from '@/components/_elements/Social/Social';
+import PhotoViewer from '@/components/_elements/PhotoViewer/PhotoViewer';
 
 import { HiOutlineDownload } from 'react-icons/hi';
 import { FaTelegramPlane } from 'react-icons/fa';
-
-//Icons
-import { IoLogoGithub } from 'react-icons/io';
-import { IoLogoLinkedin } from 'react-icons/io';
-import { FaTelegram } from 'react-icons/fa';
-import { FaPhoneSquareAlt } from 'react-icons/fa';
 
 const Home: FC = () => {
   return (
@@ -26,38 +22,22 @@ const Home: FC = () => {
       </div>
 
       <div className={styles.bio}>
-        <div className={styles.img}>
-          <div className={styles.img__wrapper}>
-            <Image
-              src="/photo3.webp"
-              alt="Кочнев Антон"
-              width={300}
-              height={300}
-              quality={50}
-            />
-          </div>
+        <div className={styles.photo_wrapper}>
+          <Image
+            className={styles.photo}
+            src="/my_photo.webp"
+            alt="Кочнев Антон"
+            width={150}
+            height={74}
+            quality={90}
+          />
         </div>
-        <div className={styles.bio__title}>
-          <h1>Кочнев Антон</h1>
-        </div>
+
+        <h1 className={styles.bio__title}>Кочнев Антон</h1>
+
         <PrintedText />
-        <div className={styles.social}>
-          <a href="https://github.com/kochnev93" target="_blank">
-            <IoLogoGithub />
-          </a>
 
-          <a href="https://www.linkedin.com/in/kochnev-ae" target="_blank">
-            <IoLogoLinkedin />
-          </a>
-
-          <a href="https://t.me/kochnev_ae" target="_blank">
-            <FaTelegram />
-          </a>
-
-          <a href="tel:+79995285154">
-            <FaPhoneSquareAlt />
-          </a>
-        </div>
+        <Social />
       </div>
 
       <div className={styles.actions}>

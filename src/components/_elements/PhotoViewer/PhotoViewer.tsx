@@ -6,6 +6,8 @@ import Image from 'next/image';
 type Img = {
   src: string;
   alt: string;
+  width?: number;
+  height?: number;
 };
 
 type Props = {
@@ -25,8 +27,8 @@ const PhotoViewer: React.FC<Props> = (props) => {
                 className={cx({ img_zoom: props.hoverEffects })}
                 src={img.src}
                 alt={img.alt}
-                width={150}
-                height={74}
+                width={img.width ? img.width : 150}
+                height={img.height ? img.height : 74}
                 quality={75}
                 blurDataURL={img.src}
                 placeholder="blur"

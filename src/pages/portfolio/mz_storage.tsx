@@ -56,6 +56,7 @@ export default function Storage() {
               { src: '/Portfolio/Storage/storage9.webp', alt: 'Storage 9' },
             ]}
           />
+
         </PageItem>
       </Layout_P>
 
