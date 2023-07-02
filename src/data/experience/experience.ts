@@ -11,10 +11,26 @@ export type TypeExperience = {
 export const experienceData: ReadonlyArray<TypeExperience> = [
   {
     id: 1,
-    company: 'Стоматологический центр "Мой Зубной"',
-    yearStart: '2021',
+    company: 'VIAR-Ваш Архив',
+    yearStart: '2023',
     yearEnd: '',
     presentTime: true,
+    position: 'Веб-разработчик',
+    responsibilities: [
+      'Анализ требований, формирование предложений и принятие технических решений по их реализации',
+      'Разработка программных решений на основе технических и архитектурных решений в рамках утвержденного технологического стека (Gatsby, React, TypeScript, Mobx, AntDesign, NodeJS, ExpressJS, MongoDB) с соблюдением требований UI и UX',
+      'Управление задачами и сроками разработки в рамках проектов и текущих планов',
+      'Анализ отклонений в поведении продукта, выявление и устранение их причин, устранение ошибок',
+      'Взаимодействие с подрядчиками, разрабатывающими связанные продукты, совместное с подрядчиком формирование решений по технической реализации внешних разработок',
+      'Документирование технических решений и отдельных элементов разработки, подержание технической документации в актуальном состоянии',
+    ],
+  },
+  {
+    id: 2,
+    company: 'Стоматологический центр "Мой Зубной"',
+    yearStart: '2021',
+    yearEnd: '2023',
+    presentTime: false,
     position: 'Главный специалист ИТ',
     responsibilities: [
       'Разработка модуля для складского учета с использованием React, Redux-toolkit, Express и других технологий',
@@ -27,7 +43,7 @@ export const experienceData: ReadonlyArray<TypeExperience> = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     company: 'Стоматологический центр "Мой Зубной"',
     yearStart: '2018',
     yearEnd: '2021',
@@ -41,7 +57,7 @@ export const experienceData: ReadonlyArray<TypeExperience> = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     company: 'ООО "Кар-финанс"',
     yearStart: '2020',
     yearEnd: '2021',
@@ -55,7 +71,7 @@ export const experienceData: ReadonlyArray<TypeExperience> = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     company: 'Тихоокеанский государственный университет',
     yearStart: '2018',
     yearEnd: '2018',
